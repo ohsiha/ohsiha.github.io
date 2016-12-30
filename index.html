@@ -3,6 +3,22 @@ layout: default
 title: OHSIHA 2017
 ---
 
+<!-- Listing the posts -->
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
 <h1>OHSIHA 2017</h1>
 
 <p>Ohjelmallinen sisällönhallinta luennoidaan keväällä 2017 maanantaisin kello 14-16 ja keskiviikkoisin 9-10 Sähkötalon salissa SJ204.</p>
