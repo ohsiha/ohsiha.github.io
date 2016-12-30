@@ -1,3 +1,8 @@
+## TODO
+
+- Test https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ohsiha/ohsiha.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
