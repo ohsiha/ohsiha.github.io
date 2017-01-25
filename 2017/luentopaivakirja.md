@@ -1,5 +1,11 @@
 <!-- luentopaivakirja.html -->
 
+---
+layout: default
+title: Luentopäiväkirja / OHSIHA 2017
+---
+
+
 # Luentopäiväkirja 
 
 ## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan 
