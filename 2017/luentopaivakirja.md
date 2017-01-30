@@ -7,6 +7,10 @@ Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentop
 
 # Luentopäiväkirja 
 
+## Luentoviikko 3.4 (viikko 5): Resurssista representaatioksi
+
+Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio. Demo: twiitti resurssina. HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus. Taustaa tarkemmin: Learn [HTML &amp; CSS](https://www.codecademy.com/learn/web), [Javascript](https://www.codecademy.com/learn/javascript).  Edistyneille: [Bootstrap](http://getbootstrap.com/). 
+
 ## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan 
 
 Toteutuskerran avausluento järjestetään maanantaina 23. tammikuuta 2017 kello 14.15 salissa SJ204.
