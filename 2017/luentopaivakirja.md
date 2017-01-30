@@ -9,7 +9,9 @@ Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentop
 
 ## Luentoviikko 3.4 (viikko 5): Resurssista representaatioksi
 
-Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio. Demo: twiitti resurssina. HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus. Taustaa tarkemmin: Learn [HTML &amp; CSS](https://www.codecademy.com/learn/web), [Javascript](https://www.codecademy.com/learn/javascript).  Edistyneille: [Bootstrap](http://getbootstrap.com/). Koodiklinikalla perehdytään [Firebaseen](https://firebase.google.com/).
+Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio. 
+Demo: twiitti resurssina (ks. [simple_read.py](https://github.com/jukkahuhtamaki/pcm-demo/blob/master/twitter-api/simple_read.py)). 
+HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus. Taustaa tarkemmin: Learn [HTML &amp; CSS](https://www.codecademy.com/learn/web), [Javascript](https://www.codecademy.com/learn/javascript).  Edistyneille: [Bootstrap](http://getbootstrap.com/). Koodiklinikalla perehdytään [Firebaseen](https://firebase.google.com/).
 
 ## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan 
 
