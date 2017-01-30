@@ -11,8 +11,10 @@ Pyri valitsemaan harjoitustyöpisteet siten, että et toista aikaisemmin oppimaa
 
 Avausluennolla esitetty ohjeistus pätee luentopäiväkirjalla suorittamiseen:
 
-Tiivistä jokaisen luentoviikon keskeiset asiat 150 sanaan.
-Kirjaa lisäksi ylös viisi oivallusta tai tärkeintä oppimaasi asiaa. Lisää vielä mahdollisuuksien mukaan yhdestä kolmeen kehityskohdetta luentoviikolle. 
+1. Tiivistä jokaisen luentoviikon keskeiset asiat 150 sanaan.
+1. Kirjaa lisäksi ylös viisi oivallusta tai tärkeintä oppimaasi asiaa. 
+1. Lisää vielä mahdollisuuksien mukaan yhdestä kolmeen kehityskohdetta luentoviikolle. 
+
 Ilmoita Jukalle mikäli olet kiinnostunut luentopäiväkirjalla suorittamisesta (otsikoi sähköposti: #ohsiha Luentopäiväkirja).
 
 Perusta luentopäiväkirjaa varten verkkoon dokumentti, jota päivität kevään mittaan luentojen edetessä. Myös Google Docs -dokumentin käyttäminen on mahdollista - jaa dokumentti Jukalle (jukka.huhtamaki@gmail.com). 
@@ -20,7 +22,5 @@ Perusta luentopäiväkirjaa varten verkkoon dokumentti, jota päivität kevään
 Luentopäiväkirjat arvioidaan seuraavien kriteerien perusteella:
 
 * Soveltava vastaan luettelomainen: Kiitettävässä luentopäiväkirjassa opiskelija jalostaa luennolla esitettyjä ajatuksia edelleen ja muodostaa viikon teemasta eheän kokonaisuuden. Välttävässä luentopäiväkirjassa opiskelija esittää samat asiat samassa muodossa kuin luennolla.
-
 * Pohdiskelu ja reflektointi: Kiitettävässä luentopäiväkirjassa opiskelija peilaa viikon teemoja omaan osaamiseen ja pohtii teemoja myös harjoitustyön näkökulmasta. Välttävässä luentopäiväkirjassa asiat on esitetty annettuina ja irrallisina toteamuksina.
-
 * Laajentaminen ja yleistäminen: Uusien näkökulmien avaaminen on kiitettävää toimintaa ja annetussa pysyminen välttävää.
