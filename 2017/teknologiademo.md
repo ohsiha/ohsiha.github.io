@@ -1,5 +1,9 @@
-teknologiademo.md
+---
+layout: default
+title: Teknologiademo / OHSIHA 2017
+---
 
+# Teknologiademo
 
 Harjoitustyön toteuttaminen on keskeinen osa Ohjelmallista sisällönhallintaa. 
 Teknologiademot tukevat harjoitustyön käynnistämistä. 

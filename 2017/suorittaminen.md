@@ -3,6 +3,8 @@ layout: default
 title: Suorittaminen / OHSIHA 2017
 ---
 
+# Suorittaminen
+
 Harjoitustyöstä voi kerätä yhteensä 18 pistettä. Tentistä on tarjolla toiset 18 pistettä. Harjoitustyön 12 ensimmäistä pistettä vaikuttavat suoraan arvosanaan ja seuraavat kuusi (6) korvaavat tarvittaessa huonosti menneen tenttitehtävän.  
 
 Suorittaminen edellyttää yhteensä 15 pisteen keräämistä, joista vähintään 9 on saatava tentistä.
