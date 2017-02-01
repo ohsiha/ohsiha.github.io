@@ -10,5 +10,6 @@ Ohjelmallinen sisällönhallinta luennoidaan keväällä 2017 maanantaisin kello
 Opintojakson kevään 2017 toteutuskerta rakentuu tämän Github-kokonaisuuden ympärille. Alan kehitys etenee juuri erityisen huimaa tahtia, joten sisältöjä päivitetään vuosittain. Myös opintojakson toteutustapaa kehitetään jatkuvasti.
 
 * [Luentopäiväkirja](luentopaivakirja) kokoaa yhteen toteutuskerran keskeiset tiedot ja resurssit. 
+* [Teknologiademot](teknologiademo) tukevat harjoitustyön käynnistämistä.
 * Harjoitustyöohje esittelee harjoitustyön tekemisen käytännöt. 
 * [Suorittaminen](suorittaminen) kertoo pisteytyksen ja suorittamisen yksityiskohdat.
