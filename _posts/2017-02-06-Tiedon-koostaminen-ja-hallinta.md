@@ -33,8 +33,8 @@ Tutkimusdatan kerääminen
 Pohditaan: 
 
 * Opinto-opasdatan kerääminen - miten toteutetaan?
-** CasperJS ja [sivukokoelman ryömiminen](http://stackoverflow.com/questions/20224687/how-to-follow-all-links-in-casperjs/20406293#20406293)
-** [Ryömijän ensimmäiset rivit](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/crawl-study-guide)
+.* CasperJS ja [sivukokoelman ryömiminen](http://stackoverflow.com/questions/20224687/how-to-follow-all-links-in-casperjs/20406293#20406293)
+.* [Ryömijän ensimmäiset rivit](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/crawl-study-guide)
  
 Twitter-rajapinta (Twitter REST API) - käydään Koodiklinikalla läpi laajempi 
 
