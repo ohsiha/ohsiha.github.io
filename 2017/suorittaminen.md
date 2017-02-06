@@ -17,9 +17,10 @@ Avausluennolla esitetty ohjeistus pätee luentopäiväkirjalla suorittamiseen:
 1. Kirjaa lisäksi ylös viisi oivallusta tai tärkeintä oppimaasi asiaa. 
 1. Lisää vielä mahdollisuuksien mukaan yhdestä kolmeen kehityskohdetta luentoviikolle. 
 
-Ilmoita Jukalle mikäli olet kiinnostunut luentopäiväkirjalla suorittamisesta (otsikoi sähköposti: #ohsiha Luentopäiväkirja).
-
-Perusta luentopäiväkirjaa varten verkkoon dokumentti, jota päivität kevään mittaan luentojen edetessä. Myös Google Docs -dokumentin käyttäminen on mahdollista - jaa dokumentti Jukalle (jukka.huhtamaki@gmail.com). 
+Ilmoita Jukalle mikäli olet kiinnostunut luentopäiväkirjalla suorittamisesta (otsikoi sähköposti: #ohsiha Luentopäiväkirja). 
+Perusta luentopäiväkirjaa varten verkkoon dokumentti, jota päivität kevään mittaan luentojen edetessä. 
+Kerro dokumentin osoite sähköpostitse kun perustat luentopäiväkirjan. 
+Myös Google Docs -dokumentin käyttäminen on mahdollista - jaa dokumentti Jukalle (jukka.huhtamaki@gmail.com).
 
 Luentopäiväkirjat arvioidaan seuraavien kriteerien perusteella:
 
