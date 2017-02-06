@@ -1,6 +1,7 @@
 # Tiedon koostaminen ja hallinta
 
 Raapijat ja ryömijät:
+
 * [Web crawler](https://en.wikipedia.org/wiki/Web_crawler#Architectures)
 * [Scraping for journalists](https://leanpub.com/scrapingforjournalists)
 * [=IMPORTHTML](https://support.google.com/docs/answer/3093339?hl=fi&rd=1)("http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/index.html"; "list"; 3)
