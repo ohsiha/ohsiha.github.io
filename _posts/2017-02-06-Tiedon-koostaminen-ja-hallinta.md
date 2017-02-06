@@ -16,6 +16,7 @@ Raapijat ja ryömijät:
 * Ghost in the Web - poistettu
 
 Datan siivoaminen ja käsittely
+
 * [Open Refine](http://openrefine.org/) 
 * [Data Wrangler](http://vis.stanford.edu/wrangler/) - Trifactalla [menee hyvin](https://twitter.com/jnkka/status/697107449908719617)!
 * [pandas](http://pandas.pydata.org/)
@@ -38,6 +39,7 @@ Tutkimusdatan kerääminen
 Pohditaan: 
 
 * Opinto-opasdatan kerääminen - miten toteutetaan?
+
 .* CasperJS ja [sivukokoelman ryömiminen](http://stackoverflow.com/questions/20224687/how-to-follow-all-links-in-casperjs/20406293#20406293)
 .* [Ryömijän ensimmäiset rivit](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/crawl-study-guide)
  
