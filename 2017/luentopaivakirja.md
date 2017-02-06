@@ -9,6 +9,7 @@ Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentop
 
 Tulossa:
 
+* perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon) 
 * maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
 
 ## Luentoviikko 3.5 (viikko 6): Tiedon koostaminen ja hallinta
