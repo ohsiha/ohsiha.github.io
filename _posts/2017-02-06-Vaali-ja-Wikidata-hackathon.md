@@ -1,4 +1,7 @@
-2017-02-06-Vaali-ja-Wikidata-hackathon
+---
+layout: default
+title: Vaali- ja Wikidatahackathon
+---
 
 YLEn [Petri Kola](http://twitter.com/pe3) tiedottaa seuraavaa:
 
