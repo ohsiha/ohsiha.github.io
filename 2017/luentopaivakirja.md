@@ -11,6 +11,12 @@ Tulossa:
 
 * maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
 
+## Luentoviikko 3.5 (viikko 6): Tiedon koostaminen ja hallinta
+
+Viikon sisällöt [erillisellä sivulla](01/25/Tiedon-koostaminen-ja-hallinta).
+
+Kolmikerrosmalli. GET vs. POST. API first. Raapijat, ryömijät ja rajapinnat esimerkkien kautta. Tiedon tallentaminen ja hallinta: MongoDB. Keskiviikon Koodiklinikalla käydään läpi laajempi esimerkki Twitter-datan keräämisestä ja analyysistä.
+
 ## Luentoviikko 3.4 (viikko 5): Resurssista representaatioksi
 
 Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio. 
