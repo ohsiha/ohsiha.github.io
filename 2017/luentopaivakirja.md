@@ -13,7 +13,7 @@ Tulossa:
 
 ## Luentoviikko 3.5 (viikko 6): Tiedon koostaminen ja hallinta
 
-Viikon sisällöt [erillisellä sivulla](01/25/Tiedon-koostaminen-ja-hallinta).
+Viikon sisällöt [erillisellä sivulla](02/06/Tiedon-koostaminen-ja-hallinta).
 
 Kolmikerrosmalli. GET vs. POST. API first. Raapijat, ryömijät ja rajapinnat esimerkkien kautta. Tiedon tallentaminen ja hallinta: MongoDB. Keskiviikon Koodiklinikalla käydään läpi laajempi esimerkki Twitter-datan keräämisestä ja analyysistä.
 
