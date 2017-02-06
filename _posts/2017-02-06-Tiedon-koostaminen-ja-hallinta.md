@@ -15,6 +15,7 @@ Datan siivoaminen ja käsittely
 * [pandas](http://pandas.pydata.org/)
 
 APIen käsittely ja hallinta 
+
 * [jQuery.ajax()](http://api.jquery.com/jquery.ajax/#example-0)
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Postman](https://www.getpostman.com/)
@@ -25,9 +26,11 @@ APIen käsittely ja hallinta
 Demoja:
  
 Tutkimusdatan kerääminen
+
 * [Indiegogo-keräin](https://github.com/jukkahuhtamaki/crowdfunding-data)
 
 Pohditaan: 
+
 * Opinto-opasdatan kerääminen - miten toteutetaan?
 ** CasperJS ja [sivukokoelman ryömiminen](http://stackoverflow.com/questions/20224687/how-to-follow-all-links-in-casperjs/20406293#20406293)
 ** [Ryömijän ensimmäiset rivit](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/crawl-study-guide)
@@ -35,9 +38,9 @@ Pohditaan:
 Twitter-rajapinta (Twitter REST API) - käydään Koodiklinikalla läpi laajempi 
 
 Twitter-esimerkki
+
 * updata source data
 * collect connections
 * create network
 * collect tweets
 * MongoDB & [mLabin](https://mlab.com/) käyttö?
-
