@@ -1,3 +1,8 @@
+---
+layout: default
+title: Tiedon koostaminen ja hallinta
+---
+
 # Tiedon koostaminen ja hallinta
 
 Raapijat ja ryömijät:
