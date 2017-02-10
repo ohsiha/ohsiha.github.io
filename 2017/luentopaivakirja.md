@@ -25,7 +25,7 @@ Demo: twiitti resurssina (ks. [simple_read.py](https://github.com/jukkahuhtamaki
 HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus. 
 Taustaa tarkemmin: Learn [HTML &amp; CSS](https://www.codecademy.com/learn/web), [Javascript](https://www.codecademy.com/learn/javascript).
 Edistyneille: [Bootstrap](http://getbootstrap.com/). 
-Koodiklinikalla perehdytään [Firebaseen](https://firebase.google.com/).
+Koodiklinikalla perehdytään [Firebaseen](https://firebase.google.com/), ks. [demon kuvaus](https://github.com/piehei/ohsiha-firebase-demo).
 
 ## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan 
 
