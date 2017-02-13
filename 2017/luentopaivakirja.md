@@ -14,7 +14,7 @@ Tulossa:
 
 ## Luentoviikko 3.6 (viikko 7) Verkkopalvelun arkkitehtuuri ja yleinen toiminnallisuus
 
-<p>Esitys <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/pruju/lv37/esitys.php">hypertekstinä</a> ja <a class="ext" href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/pruju/lv37/esitys.php?mode=plain" target="_blank">pelkistettynä versiona</a>.</p>
+Esitys [hypertekstinä](luento/36/esitys.html).
 
 [Harjoitustyöohje](harjoitustyo) on julkaistu.
 
@@ -33,6 +33,7 @@ uudelleenkäytettävyys ja verkkopalvelun toteuttaminen,
 esimerkkejä verkkopalvelujen toiminnallisuudesta. 
 Koodiklinikalla katsastetaan erilaisia Web-sovelluskehyksiä.  
 <!-- <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/blog/nodejs-demo-2522016">Node.js-demo</a>. </p>-->
+
 Linkkejä ja lisätietoa:
 
 <ul>
