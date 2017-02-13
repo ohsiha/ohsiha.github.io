@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+         <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <title>MATHM-81000 Ohjelmallinen sisällönhallinta :: Luentoviikko 3.6</title>
+          <meta name="copyright" content="Esitys Jukka Huhtamäki. Käytössä HTML Slidy." />
+          <meta name="font-size-adjustment" content="1" />
+          <link rel="stylesheet" type="text/css" media="print" href="../Slidy/print.css" />    
+          <link rel="stylesheet" href="../Slidy2/styles/slidy.css" type="text/css"
+      media="screen, projection" />
+
+<!--    <link rel="stylesheet" href="../Slidy2/styles/w3c-blue.css" type="text/css"
+      media="screen, projection" /> -->
+    <link rel="stylesheet" href="../Slidy2/styles/iislab.css" type="text/css"
+      media="screen, projection" />
+    <script src="../Slidy2/scripts/slidy.js" type="text/javascript"></script><style type="text/css">
+  .label {
+    display: block;
+    width: 30ex;
+    float: left;
+  }
+</style>   
+   
+       <!-- start Mixpanel -->
+<!--    <script type="text/javascript">
+    //<![CDATA[
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+   g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+   mixpanel.init("d5293bf02815fd090b6340416496ef8a");</script> -->
+   <!-- end Mixpanel -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>   
+    <!--
+    <script type="text/javascript">
+     $(document).ready(function () {
+     mixpanel.track('Open ' + document.title);
+   });
+    //]]>
+     </script>   -->
+</head>
+
+
+<body><div class="background">
+             <div class="header"></div>
+
+          </div>      
+
+<div class="slide cover">
+    <h1><a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/luentop%C3%A4iv%C3%A4kirja">Ohjelmallinen sisällönhallinta, kevät 2016</a></h1>
+    <p>Luento 3.7. Verkkopalvelun arkkitehtuuri ja keskeinen toiminnallisuus</p>
+    <p>Jukka Huhtamäki, <a href="http://tut.fi/iislab">IISLab</a></p>
+</div>
+      
+<div class="slide">
+   <h1>Luento 3.6. Verkkopalvelun arkkitehtuuri ja keskeinen toiminnallisuus</h1>
+   <p>Luentokerran tavoitteena on perehtyä
+      verkkopalveluarkkitehtuurin yleisiin periaatteisiin ja kaikille
+      verkkopalveluille yhteisiin toimintoihin ja ominaisuuksiin:
+   </p>
+   <ul>
+      <li>
+         Tietokantapohjainen
+         Web-teknologialla toteutettu verkkopalvelu perustuu yleisesti
+         <dfn>kolmikerrosmalliin</dfn> (three-tier model)
+      </li>
+      <li>
+         Verkkopalveluiden
+         kolme keskeistä toimintoa ovat <em>pääsynhallinta</em> (access), <em>käyttäjän
+         tunnistaminen</em> (authentication) ja <em>käyttöoikeuksien hallinta</em> (authorization).
+      </li>
+      <li>
+         Verkkopalvelun
+         ohjelmallinen toteuttaminen edellyttää käytännössä aina
+         <em>istuntojen</em> (session) soveltamista.
+      </li>
+      <li>
+         Verkkopalvelun
+         <span>turvallisuuteen</span> ja <span>tietoturvaan</span> liittyviä asioita ei voi korostaa koskaan
+         liikaa.
+      </li>
+      <li>
+         Verkkopalveluihin
+         liittyy edellä mainittujen lisäksi lukuisia yleisiä ominaisuuksia,
+         jotka on syytä ottaa huomioon verkkopalveluiden suunnittelu- ja
+         toteutustyössä.
+      </li>
+   </ul>
+   <p>Luentokerran aikana käsiteltävien ominaisuuksien toteuttaminen <span>yleiseen,
+      uudelleenkäytettävään sovelluskehykseen</span> on välttämätöntä kun
+      pyritään sovellusten toteutustyön tehostamiseen.
+   </p>
+</div>
+<div class="slide">
+   <h1>Asiakas-palvelin –malli vs. kolmikerrosmalli
+   </h1>
+   <ul>
+      <li>
+         Verkkopalvelun arkkitehtuuri perustuu yleisesti asiakas-palvelin -malliin
+      </li>
+      <li>
+         <span>Tietokantapohjaisessa</span> <span>(verkko)palvelussa</span> asiakas-palvelin -malli toimii
+         seuraavasti: 
+         <ol>
+            <li>
+               Käyttäjä
+               käyttää palvelua <dfn>asiakassovelluksen</dfn> (user
+               agent) välityksellä.
+               
+            </li>
+            <li>
+               Asiakassovelluksen
+               ja palvelimen välinen vuorovaikutus toteutetaan tarkoitukseen
+               sopivalla protokollalla.
+               
+            </li>
+            <li>
+               Toimintaperiaate:
+               asiakassovellus tekee kyselyitä tietokantaan käyttäjän ohjaamana ja
+               näyttää kyselyn tulokset käyttäjälle käyttöliittymässään.
+               
+            </li>
+         </ol>
+      </li>
+   </ul>
+   <ul>
+      <li>
+         Webissä
+         asiakas-palvelin mallin toteuttaminen suoraan Web-selaimen ja
+         tietokantapalvelimen yhdistelmänä on periaatteessa mahdollista
+         (älykäs asiakasohjelma). Ratkaisu ei kuitenkaan sellaisenaan ole
+         yleisesti käytössä huonon selainyhteensopivuuden takia 
+         
+      </li>
+      <li>
+         Tietokantapohjaisen
+         verkkopalvelun arkkitehtuuri noudattaa yleensä ns. <dfn>kolmikerrosmallia</dfn> (three-tier model).
+      </li>
+      <li>
+         Kolmikerrosmallissa Web-selaimen ja tietokantapalvelimen väliin toteutetaan välikerros,
+         joka toimii asiakkaana tietokantapalvelimelle ja palvelimena
+         Web-selaimelle.
+         
+      </li>
+   </ul>
+</div>
+<div class="slide">
+   <h1>Kolmikerrosmalli ja PHP</h1>
+   <p class="subhead">
+         Opintojaksolla käytössä olevilla teknologioilla kolmikerrosmallin välikerros
+         toteutetaan Web-palvelimen ja PHP-ympäristön yhdistelmänä:
+  </p>
+  <ol>
+            <li>
+               Välikerroksen
+               toiminnallisuus ohjelmoidaan PHP-kielellä.
+            </li>
+            <li>
+               Selaimen ja
+               WWW-palvelimen välinen vuorovaikutus hoidetaan tuttuun tapaan
+               HTTP-protokollalla.
+
+            </li>
+            <li>
+               PHP-tulkki
+               käyttää tietokantapalvelinta asiakasohjelman roolissa toimivan
+               <span>funktiokirjaston</span> välityksellä.
+            </li>
+            <li>
+               Tietokantapalvelimen ja -asiakkaan välinen vuorovaikutus toteutetaan käytössä olevan
+               tietokannan omalla protokollalla tai yleisellä Open Database
+               Connectivity (ODBC) -protokollalla.
+            </li>
+         </ol>
+   <p>
+         PHP
+         tukee sekä ODBC-protokollaa että yleisimpien tietokantapalvelimien
+         omia protokollia: MySQL, PostgreSQL, MS Access, IBM DB2, Oracle,
+         ...
+         
+      </p>
+      <p>
+         ODBC-protokollan
+         käyttäminen parantaa (ainakin teoriassa) sovelluksen siirrettävyyttä eri
+         palvelinympäristöjen välillä. Tietokanta voidaan abstrahoida myös
+         sopivalla ohjelmistokirjastolla. PHP-kielen tapauksessa eräs
+         vaihtoehto on <a href="http://adodb.sourceforge.net/">ADOdb</a>.
+      </p>
+</div>
+<div class="slide">
+   <h1>Verkkopalvelun keskeiset
+      toiminnot
+   </h1>
+   <ul>
+      <li>
+         Verkkopalveluiden kolme keskeistä toimintoa ovat:
+         <ul>
+            <li>
+               <em>Pääsynhallinta</em> (access): verkkopalvelun mahdollisten
+               käyttäjien rajaaminen.
+               
+            </li>
+            <li>
+               <em>Käyttäjän tunnistaminen</em> (authentication):
+               verkkopalvelun käyttäjien tunnistaminen.
+               
+            </li>
+            <li>
+               <em>Käyttöoikeuksien hallinta</em> (authorization):
+               verkkopalvelun toimintojen käyttöoikeuksien rajoittaminen.
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <p>Web-teknologialla toteutettujen palvelujen käyttöliittymät toteutetaan HTML-lomakkeisiin. 
+      Käy läpi <a href="http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2012/pruju/02/esitys.php">Web-lomakkeita 
+      käsittevä luentomateriaali vuodelta 2012</a> ja varmista että hallitset lomakkeiden perusteet.</p>
+</div>
+<div class="slide">
+  <h1>Pääsynhallinta</h1>
+   <p class="subhead">Yksinkertaisin
+         keino <dfn>pääsynhallinnan</dfn> toteuttamiseen on
+         HTTP-protokollan HTTP Basic Authentication -mekanismin
+         käyttäminen:</p>
+
+   <ul>
+      <li>
+         Web-resurssin
+         noutamiseen oikeuttavat tiedot välitetään HTTP-pyynnön <code>Authorization</code>-nimisessä otsikossa.            
+      </li>
+      <li>
+         HTTP-perusautentikointia
+         käyttävä verkkopalvelu on helppo tunnistaa tavasta, jolla selain
+         kysyy käyttäjältä tunnuksen ja salasanan: tiedot syötetään erikseen
+         aukeavaan (taustaväriltään usein harmaaseen) dialogiin, jonka
+         sulkeminen Peruuta-painikkeella aiheuttaa HTTP-virhekoodin
+         <code>401 Unauthorized</code>.
+      </li>
+      <li>
+         Pääsynhallinta
+         voidaan toteuttaa myös esimerkiksi IP-osoitteiden avulla
+         (ongelmia!).
+         
+      </li>
+   </ul>
+   <ul>
+      <li>
+         <dfn>Käyttäjän tunnistaminen</dfn> voidaan pääsynhallinnan tavoin
+         periaatteessa toteuttaa HTTP-perusautentikoinnin avulla. Pääsynhallinnan ja
+         käyttäjän tunnistamisen ero: ensimmäisessä tunnus voi olla yhteinen
+         joukolle ihmisiä, jälkimmäisessä jokaisella käyttäjällä on oma
+         henkilökohtainen tunnus.
+      </li>
+      <li>
+         Yleensä käyttäjän tunnistamiseen toteutetaan <em>räätälöity
+         toiminnallisuus</em>, jolloin tunnistamiseen liittyvät
+         käyttöliittymät ja esimerkiksi virheilmoitukset voidaan toteuttaa
+         halutulla tavalla =&gt; <span>käyttöliittymien
+            yhtenäisyys</span>, <span>käyttäjän toiminnan
+            tukeminen</span>.
+         
+      </li>
+   </ul>
+</div>
+<div class="slide">
+  <h1>Käyttöoikeuksien hallinta</h1>
+  <p><span>Käyttöoikeuksien</span> hallinta voidaan toteuttaa esimerkiksi
+  seuraavilla tavoilla:</p>
+   <ol>
+      <li>
+         Erittäin
+         yksinkertaisessa sovelluksessa käyttöoikeuksiin ei välttämättä
+         tarvitse ottaa kantaa ollenkaan: kaikilla käyttäjillä on samat
+         oikeudet.
+         
+      </li>
+      <li>
+         Käyttöoikeudet määritellään jokaiselle käyttäjälle erikseen.
+      </li>
+      <li>
+         Käyttöoikeudet jaetaan käyttäjille <span>roolien</span> avulla:
+         jokaisella käyttäjällä on (yksi) rooli.
+      </li>
+      <li>
+         Käyttöoikeudet jaetaan käyttäjille <span>profiilien</span> avulla:
+         jokaisella käyttäjällä on yksi tai useampi profiili.
+      </li>
+   </ol>
+   <p>
+         Käyttöoikeuksien
+         jakaminen roolien avulla on toimiva ratkaisu silloin, kun palvelun
+         käyttäjäryhmän jäsenet voidaan helposti ryhmitellä eri rooleihin.
+         Profiilien käyttäminen mahdollistaa käyttöoikeuksien
+         määrittelemisestä rooleja joustavammin.
+    </p>
+</div>
+<div class="slide">
+   <h1>Käyttäjän
+      tunnistaminen: toteuta myös nämä
+   </h1>
+   <ul>
+      <li>
+         <span>Rekisteröityminen</span>: käyttäjä syöttää haluamansa
+         tunnistetiedot (yleensä tunnus ja salasana) ja mahdollisesti muita
+         tietoja itsestään.
+         <ul>
+            <li>
+               Tunnuksen ja
+               salasanan pituutta ja muotoa halutaan mahdollisesti
+               rajoittaa 
+               
+            </li>
+            <li>
+               Salasana on syytä tallentaa tietokantaan tiivisteenä ja 
+               soveltaa <a href="http://php.net/manual/en/faq.passwords.php#faq.passwords.salt">ns. suolaamista</a>.
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul>
+      <li>
+         <span>Sisäänkirjautuminen</span> rekisteröinnissä syötettyjen
+         tietojen avulla (tunnus ja salasana) 
+      </li>
+      <li>
+         Käyttäjän on
+         halutessaan voitava <span>kirjautua ulos</span>
+         palvelusta.
+         
+      </li>
+      <li>
+         Palvelun
+         toimintojen toteutuksessa on voitava (helposti) varmistaa, että
+         käyttäjä on kirjautunut sisään. Käyttäjään liittyviin tietoihin on
+         päästävä suoraviivaisesti käsiksi.               
+      </li>
+      <li>
+         Käyttäjän on
+         pystyttävä <span>halutessaan vaihtamaan
+         salasanansa</span> käytettävyys- ja tietoturvasyistä.
+      </li>
+      <li>
+         Käyttäjät <span>unohtavat</span> <span>salasanansa</span> aina silloin tällöin. Käyttäjän on
+         pystyttävä selviämään tilanteesta itsenäisesti. Esimerkkiratkaisu:
+         käyttäjällä on mahdollisuus tilata rekisteröitymisen yhteydessä
+         määriteltyyn sähköpostiosoitteeseen linkki, jonka valitsemalla hän
+         voi määritellä itselleen uuden salasanan.
+      </li>
+   </ul>
+</div>
+<div class="slide intermission">
+    <h1>Lomakkeet ja HTTP</h1>
+    <p>Lomaketoteutukset kommunikoivat Web-palvelmien kanssa HTTP-protokollalla.</p>
+</div>
+<div class="slide">
+   <h1>Verkkopalvelu ja toimintojen luonne</h1>
+   <p>Nykyaikainen Web-arkkitehtuuri (<a href="http://www.w3.org/TR/webarch/"><span>http://www.w3.org/TR/webarch/</span></a>) jakaa verkkopalveluiden toiminnot kahteen luokkaan, <dfn>turvallisiin</dfn> ja <dfn>ei-turvallisiin</dfn>:
+   </p>
+   <ul>
+      <li><span>Turvallinen toiminto</span> (safe intercation): 
+         <ul>
+            <li>toiminto vastaa luonteeltaan <span>kyselyä/hakua</span></li>
+            <li>toiminnon suorittaminen ei muuta sovelluksen tilaa </li>
+         </ul>
+      </li>
+      <li><span>Ei-turvallinen toiminto</span> (unsafe interaction): 
+         <ul>
+            <li>toiminto vastaa luonteeltaan <em>tilausta</em></li>
+            <li>toiminnon suorittamisen seurauksena sovelluksen tila muuttuu: käyttäjän lisätään sähköpostilistalle tai rekisteröidään palveluun,
+               toiminnon seurauksena syntyy maksutapahtuma ja niin edelleen.
+            </li>
+            <li>Huom: ei-turvallinen tarkoittaa tässä eri asiaa kuin vaarallinen (dangerous).</li>
+         </ul>
+      </li>
+   </ul>
+</div>
+<div class="slide">
+   <h1>Toiminnon luonne &amp; välitystavan valinta</h1>
+   <p>Selain välittää käyttäjän syötteen palvelimelle HTTP-pyyntönä. Lomakesoveltajan valittavana ovat seuraavat HTTP-metodit:
+   </p>
+   <ul>
+      <li><span>get</span>-metodi: 
+         <ul>
+            <li>turvalliset toiminnot: haku/kysely, sovelluksen tila ei muutu </li>
+            <li>kaikki pyyntöön liittyvät tiedot koodataan mukaan URI-tunnisteeseen </li>
+         </ul>
+      </li>
+      <li><span>post</span>-metodi:
+         <ul>
+            <li>ei-turvalliset toiminnot: tilaus, sovelluksen tila muuttuu </li>
+            <li>pyyntöön liittyvät tiedot koodataan HTTP-pyynnön otsikkotietoihin </li>
+            <li>käyttäminen perusteltua myös arkaluontoisia tietoja (esim. salasana, yhteystiedot tai luottokortin numero) välitettäessä  </li>
+         </ul>
+      </li>
+   </ul>
+   <p>Myös Web-selaimessa näkyviä eroja! Mitä?</p>
+</div>
+<div class="slide">
+   <h1>Pysyvät URI-tunnisteet</h1>
+   <p>Huomioi myös URI-tunnisteiden <span>pysyvyys</span> (stability) ja <span>ennustettavuus</span> (predictability):</p>
+      <ul>
+          <li>Resurssia edustava representaatio URI-tunnisteen on tarjolla ajanhetkestä riippumatta </li>
+          <li>Resurssin URI-tunnisteen <a href="http://www.w3.org/Provider/Style/URI">tulee pysyä muuttumattomana</a></li>
+          <li>URI-tunniste on sama jakelukontekstista (käyttäjä, käyttötilanne ja päätelaite) riippumatta: representaatio
+         räätälöidään jakelukontekstiin sopivaksi</li>
+      <li><span><span>HTTP-protokollan </span></span><span><span>get</span></span>-metodi mahdollistaa pysyvien URI-tunnusten toteuttamisen: 
+         kirjanmerkit, linkit ja välimuistin toiminta.</li>
+      <li>Esimerkki: <a href="http://aikataulut.tampere.fi/?key=3525&amp;stop=3525">pysäkin numero 3525 aikataulu</a>. Myös ongelmia! Mitä?</li>
+   </ul>
+</div>
+<div class="slide">
+   <h1>Muista myös nämä!</h1>
+   <p>Verkkopalvelun käyttäjä on liian usein pulassa Web-lomakkeiden kanssa.</p>
+      <ul><li> Keinoja käyttäjän tukemiseen:
+          <ul>
+             <li><span>Ohjeet ja opasteet</span>: Mitä kenttään on syötettävä? Syötteen pakollisuus? Oletusten ja rajoitusten esittäminen!
+             </li>
+             <li><span>Virheilmoitukset ja korjausehdotukset</span>: Selkeä ilmoitus virheellisestä syötteestä korjausehdotuksineen. 
+                 Syötteen dynaaminen tarkastaminen (Ajax)?
+             </li>
+             <li><span>Viestit onnistuneista toiminnoista</span>: (”Levyn Nieminen &amp; Litmanen tiedot lisätty”).</li>
+             <li><span>Syötteen kierrättäminen</span>: Kerran syötetyn tiedon käyttäminen oletusarvona tulevissa lomakkeissa jne.
+             </li>
+             <li><span>Vaiheittain täytettävä lomake</span>: Suuremman lomakkeen jakaminen selkeisiin kokonaisuuksiin, 
+                 joiden välillä käyttäjä voi navigoida lomaketta täyttäen. 
+             </li>
+          </ul>
+      </li>
+   </ul>
+   <p>Käyttäjän tukeminen on käytännössä otettava huomioon jo sovellusarkkitehtuurin suunnittelussa.</p>
+</div>
+
+
+<div class="slide">
+   <h1>Istunnon hallinta
+   </h1>
+   <ul>
+      <li>
+         HTTP-protokollan
+         tilattomuus on jo tuttua, mutta kerrataanpa vielä:
+         HTTP-protokollassa ei ole sisäänrakennettua keinoa sovelluksen
+         tilan ylläpitämiseen.
+         
+      </li>
+      <li>
+         Sovelluksen
+         tilan ylläpitäminen toteutetaan <dfn>istuntojen</dfn> (session)
+         tuella:
+         <ul>
+            <li>
+               Sisäänkirjautuminen
+            </li>
+            <li>
+               Sisällön/toimintojen
+               näyttäminen käyttöoikeuksien perusteella
+            </li>
+            <li>
+               Sovelluksen
+               <span>mukauttaminen</span> käyttäjän mieltymysten
+               (preference) perusteella
+            </li>
+            <li>
+               Käyttäjän
+               <span>toiminnan seuraaminen</span>, esimerkiksi
+               lokitiedon kerääminen 
+               
+            </li>
+            <li>
+               <span>Ostoskorin</span> toteuttaminen 
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul>
+      <li>
+         Huomaa, että
+         istuntoja voidaan hyödyntää myös ilman käyttäjän tunnistamista.
+         Tällöin sovelluksen tilaa ei kuitenkaan voida säilyttää
+         <em>istuntojen välillä</em>.
+         
+      </li>
+      <li>
+         Asiakas-palvelin
+         -mallissa istunto toteutetaan siten, että asiakkaalle annetaan
+         yksikäsitteinen <em>istunnon tunniste</em>, jonka
+         asiakas toimittaa takaisin palvelimelle jokaisen pyynnön
+         yhteydessä. Istunnon tiedot säilytetään palvelimella ja niihin
+         päästään käsiksi istunnon tunnisteen perusteella.
+         
+      </li>
+   </ul>
+</div>
+<div class="slide">
+   <h1>Istunnot käytännössä</h1>
+   <ul>
+      <li>
+         Istunnon
+         tunnisteen välittämiseen on useita tapoja:
+         <ul>
+            <li>
+               <span>Evästeet</span> (Cookie): Eväste on (lyhyt) merkkijono, jonka
+               verkkopalvelu välittää asiakkaalle HTTP-vastauksen mukana. Eväste
+               tallennetaan käyttäjän koneelle joko istunnon ajaksi tai pysyvästi
+               kovalevylle. Asiakas lähettää evästeen palvelulle jokaisen
+               palvelupyynnön mukana. Evästeitä nimitetään usein kekseiksi,
+               pipareiksi tai jopa taikapipareiksi 
+               
+            </li>
+            <li>
+               <span>HTTP GET:</span> Istunnon tunniste sijoitetaan muiden pyynnön
+               parametrien tapaan osaksi URI-tunnistetta (<code>example.php?sessionid=xyz123</code>) =&gt;
+               ongelmia!
+            </li>
+            <li>
+               <span>HTTP POST:</span> Istunnon tunniste sijoitetaan HTML-lomakkeen
+               piilokenttään.
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul>
+      <li>
+         Evästeen voimassaoloaika voidaan määritellä evästä asetettaessa. Eväste
+         voidaan myös aktiivisesti poistaa siinä vaiheessa, kun istunto
+         lopetetaan.
+         
+      </li>
+      <li>
+         Istunnot
+         ovat erittäin keskeisessä roolissa verkkopalvelun toiminnallisuuden
+         toteuttamisessa. Esimerkiksi yleiskäyttöinen ostoskorin
+         toiminnallisuus toteutetaan istuntojen avulla.
+      </li>
+   </ul>
+</div>
+<div class="slide">
+   <h1>Verkkopalvelun tietoturva</h1>
+   <p class="subhead">Verkkopalvelun
+         tietoturvaan liittyviä riskitekijöitä (vrt. Welling ja Thompson
+         2004):</p>
+  <ul>
+            <li>
+               <span>Luottamuksellisen tiedon näkyvyys</span> (exposure of
+               confidential data).
+               
+            </li>
+            <li>
+               <span>Tiedon häviäminen tai tuhoutuminen</span> (loss or destruction
+               of data).
+               
+            </li>
+            <li>
+               <span>Tiedon muokkaaminen</span> (modification of data) 
+               
+            </li>
+            <li>
+               <span>Palvelun</span> <span>käytön esto</span>
+               <span>(denial of service)</span> 
+               
+            </li>
+            <li>
+               <span>Virheet ohjelmistossa</span> (errors in software)  
+               
+            </li>
+            <li>
+               <span>Kiistäminen</span> (repudiation): toiminnossa osallisena ollut
+               taho kiistää tekemisensä (tavaran tilaaminen, maksullisen palvelun
+               käyttäminen).
+               
+            </li>
+         </ul>
+   <p>
+         Tietoturvan
+         toteuttamisessa on tehtävä kompromissi verkkopalvelun
+         käytettävyyden, suorituskyvyn, kustannustehokkuuden ja
+         turvallisuuden välillä. Esimerkkejä:
+   </p>
+         <ul>
+            <li>
+               Salasanan
+               säännöllinen kysyminen verkkopankissa heikentää
+               käytettävyyttä.
+               
+            </li>
+            <li>
+               Kaiken
+               palvelun välittämän tiedon salaaminen syö palvelimen ja verkon
+               resursseja.
+               
+            </li>
+         </ul>
+   <p>
+       Paikkansa pitävä teesi: tietoturva on ennen kaikkea <strong>asennekysymys</strong>!
+   </p>
+</div>
+<div class="slide">
+   <h1>Verkkopalvelu: yleisiä
+      ominaisuuksia
+   </h1>
+   <p>
+         Verkkopalvelut
+         sisältävät näennäisestä erilaisuudestaan huolimatta lukuisia
+         yleisiä ominaisuuksia: </p>
+   <ul>
+            <li>
+               Uutisten
+               lisääminen, muokkaaminen ja julkaiseminen (esim.
+               RSS-muoto) 
+            </li>
+            <li>
+               Verkkopalvelun
+               kansainvälistäminen (i18n) ja kotoistaminen (l10n) 
+               
+            </li>
+            <li>
+               Erilliset
+               tai integroidut ylläpitäjän työvälineet (esim. käyttäjien
+               hallinta) 
+               
+            </li>
+            <li>
+               Tiedonhaun
+               apuvälineet (esim. avainsanahaku, taggaaminen, hakemistot, tagipilvet, )
+               
+            </li>
+            <li>
+               Sovelluksen
+               räätälöinti sivupohjien tuella 
+               
+            </li>
+            <li>
+               Monikanavaisuus
+               ja mukautuminen (laiteriippumattomuus &amp;
+               saavutettavuus) 
+               
+            </li>
+            <li>
+               Käytön
+               tilastointi ja analysointi 
+               
+            </li>
+            <li>
+               Sisällön
+               ylläpitämisen työvälineet 
+               
+            </li>
+            <li>
+               Mielipidekyselyt,
+               äänestäminen 
+               
+            </li>
+            <li>
+               Keskustelualue,
+               vieraskirja, kalenteri, ostoskori, ...             
+            </li>
+         </ul>
+   <p>
+         Verkkopalvelun
+         toimintojen suunnittelumantra: Lisää/Poista/Muokkaa/Kopioi
+         (CRUD)
+      </p>
+</div>
+<div class="slide">
+   <h1>Lisää yleisiä
+      ominaisuuksia (vrt. Django)
+   </h1>
+   <p>
+         <a href="http://www.djangoproject.com/">Django</a> listaa
+         ansiokkaasti joukon laadukkaan Web-sovelluskehyksen
+         ominaisuuksia:
+  </p>
+   <ul>
+      <li>
+         Pysyvän
+         tietosisältökerroksen automatisointi ORM (object-relational
+         mapping) –menetelmällä (Object-relational mapper) 
+         
+      </li>
+      <li>
+         Automaattiset
+         ylläpitokäyttöliittymät (Automatic admin interface) 
+         
+      </li>
+      <li>
+         Tyylikkäät
+         URI-tunnisteet (Elegant URL design) 
+         
+      </li>
+      <li>
+         Sivupohjamekanismi
+         (Template system) 
+         
+      </li>
+      <li>
+         Välimuisti
+         (Cache system)  
+         
+      </li>
+      <li>
+         Kansainvälistäminen
+         (Internationalisation) 
+         
+      </li>
+   </ul>
+</div>
+<div class="slide">
+  <h1>Lisää kehysvaihtoehtoja</h1>
+  <p>Djangon rinnalla on toki muitakin vaihtehtoja</p>
+  <ul>
+   <li>
+         <a href="http://rubyonrails.org/">Ruby on Rails</a> (”Web development
+            that doesn’t hurt”)
+  </li>
+  <li> <a href="http://codeigniter.com/">Codeigniter</a> ("CodeIgniter is a powerful PHP framework with a very small footprint, built for PHP coders who need a simple and elegant toolkit to create full-featured web applications.")</li>
+<li>            
+         Kolmikon Django, Ruby on Rails ja CodeIgniter
+         keskeinen tavoite on lisätä sovelluskehittäjän käytössä olevaa
+         ilmaisuvoimaa ja siten mahdollista verkkopalveluiden ketterä ja
+         kustannustehokas toteuttaminen.
+</li>
+</ul>               
+</div>
+
+<div class="slide intermission">
+  <h1>Kolmikerrosmalli &gt; AJAX ja REST</h1>
+  <p>Kolmikerrosmalli &gt; AJAX ja REST</p>
+</div>
+
+<div class="slide">
+<h1>Kohti AJAXia</h1>
+<p>Kolmikerrosmalli esittelee Web-hypermediajärjestelmän teknisen perustan. </p>
+<p>AJAX (Asynchronous JavaScript And XML) mahdollistaa entistä vuorovaikutteisempien sovellusten kehittämisen ja esittelee lisää kerroksia arkkitehtuuriin.</p>
+<p><img src="media/ClientSideAjax.gif" alt="openajax.org: AJAX-arkkitehtuuri"/></p>
+<p>Kuva: <a href="http://www.openajax.org/member/wiki/WP2_-_Successful_Deployment_of_Ajax_and_OpenAjax">openajax.org</a></p>
+</div>
+
+
+<div class="slide">
+  <h1>Kohti RESTiä</h1>
+  <p>Kolmikerrosmalli esittelee Web-hypermediajärjestelmän teknisen perustan. </p>
+  <p>REST (Representational State Transfer) -malli (Fielding 2000) laajentaa ja yleistää mallia kohti hajautettua Web-hypermediaa, vrt. 
+      </p>
+  <p><img src="http://www.ibm.com/developerworks/websphere/library/techarticles/0708_colonnese/images/figure1.jpg" alt="Fielding (2000): REST-mallin prosessinäkymä"/></p>
+  <p>Kuva: (Fielding, 2000)</p>
+</div>
+
+<div class="slide">
+   <h1>Lopuksi</h1>
+   <ul>
+      <li>
+         Sekä
+         verkkopalvelun teknisestä arkkitehtuurista että toiminnallisuudesta
+         löytyy verkkopalvelusta toiseen toistuvia tekijöitä 
+         
+      </li>
+      <li>
+         Näiden
+         <span>toistuvien tekijöiden tunnistaminen</span> on
+         erittäin hyödyllistä monellakin tavalla: 
+         <ul>
+            <li>
+               Verkkopalvelun
+               <span>toiminnallisuuden suunnittelutyö</span> voidaan
+               ainakin osittain tehdä uusien toimintojen keksimisen sijaan
+               olemassa olevista vaihtoehdoista valitsemalla ja/tai vaihtoehtoja
+               räätälöimällä 
+               
+            </li>
+            <li>
+               Verkkopalvelujen
+               toteuttamisen tueksi voidaan rakentaa <span>yleinen
+                  kehysjärjestelmä</span>, joka minimoi toteutustyöhön liittyvät
+               rutiinit ja mahdollistaa aikaresurssien keskittämisen varsinaisen
+               sovelluslogiikan toteuttamiseen 
+               
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul>
+      <li>
+         PHP-kieli
+         mahdollistaa tietokantojen helpon käyttämisen ja tukee esimerkiksi
+         istuntojen hyödyntämistä ja muita yleisiä toimintoja 
+         
+      </li>
+      <li>
+         PHP-sovellusten
+         tekemisen tueksi löytyy myös erilaisia sovelluskehyksiä, joihin
+         tutustuminen on erittäin suositeltavaa ennen laajempien
+         järjestelmien toteuttamista 
+         
+      </li>
+      <li>
+         Kehyksiä ei
+         välttämättä tarvitse käyttää sellaisenaan; tärkeintä on ideoiden
+         kartoittaminen ja soveltaminen. Eri käyttötarkoituksiin taipuvien
+         sovelluskehysten käyttöä (CodeIgniter, Django, Ruby on Rails, ...) on
+         kuitenkin syytä harkita vakavasti.
+         
+      </li>
+   </ul>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7243025-6', 'tut.fi');
+  ga('send', 'pageview');
+
+</script></body></html>            
