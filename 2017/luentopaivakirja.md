@@ -18,6 +18,7 @@ Esitys [hypertekstinä](luento/36/esitys.html).
 
 [Harjoitustyöohje](harjoitustyo) on julkaistu.
 
+Luento käyntiin [Flask-demolla](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/flask). 
 Asiakas-palvelin -malli vs. kolmikerrosmalli, 
 verkkopalvelun keskeinen toiminnallisuus (pääsynhallinta, käyttäjän tunnistaminen, käyttöoikeuksien hallinta), 
 lomakkeet (ks. [lomake-elementit](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2012/demo/html-lomakkeet/lomake-elementit.html), 
@@ -100,7 +101,7 @@ Linkkejä ja lisätietoa:
 
 Viikon sisällöt [erillisellä sivulla](02/06/Tiedon-koostaminen-ja-hallinta).
 
-Kolmikerrosmalli. GET vs. POST. API first. Raapijat, ryömijät ja rajapinnat esimerkkien kautta. Tiedon tallentaminen ja hallinta: MongoDB. Keskiviikon Koodiklinikalla käydään läpi laajempi esimerkki Twitter-datan keräämisestä ja analyysistä.
+Kolmikerrosmalli. GET vs. POST. API first. Raapijat, ryömijät ja rajapinnat esimerkkien kautta. Tiedon tallentaminen ja hallinta: MongoDB. Keskiviikon Koodiklinikalla käydään läpi laajempi esimerkki Twitter-datan keräämisestä ja analyysistä (ks. [demo-twitter-collector](https://github.com/jukkahuhtamaki/demo-twitter-collector)).
 
 ## Luentoviikko 3.4 (viikko 5): Resurssista representaatioksi
 
