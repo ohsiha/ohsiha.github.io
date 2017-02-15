@@ -4,42 +4,90 @@
 
 <p>
 Harjoitustyö on pakollinen osa Ohjelmallisen sisällönhallinnan 
-<a href="suorittaminen">suorittamista</a>. Näin siksi, että sisällön käsittelyn automatisoinnin ja verkkopalveluiden toiminnallisuuksien kehittäminen edellyttää välttämättä käytännön harjoittelua.</p>
-<p>Harjoitustyön lopputuloksena syntyy koodiportfolio, joka kokoaa yhteen harjoitustyöhön toteutetut toiminnot ja niiden tiiviin dokumentaation (ks. <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/htyo/koodiportfolio.html" target="_blank">koodiportfolion sivupohja</a> (käytä selaimen Tallenna nimellä -toimintoa, jotta tiedoston merkistökoodaus säilyy ja näet ääkköset oikein)). </p>
-<p>Keväällä 2016 voit käyttää harjoitustyön tekemiseen seuraavia vaihtoehtoisia teknologioita:</p>
+<a href="suorittaminen">suorittamista</a>. 
+Näin siksi, että sisällön käsittelyn automatisoinnin ja verkkopalveluiden toiminnallisuuksien kehittäminen edellyttää välttämättä käytännön harjoittelua.</p>
+<p>Harjoitustyön lopputuloksena syntyy koodiportfolio, joka kokoaa yhteen harjoitustyöhön toteutetut toiminnot ja niiden tiiviin dokumentaation. 
+<!--   (ks. <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/htyo/koodiportfolio.html" target="_blank">koodiportfolion sivupohja</a> (käytä selaimen Tallenna nimellä -toimintoa, jotta tiedoston merkistökoodaus säilyy ja näet ääkköset oikein)).  -->
+</p>
+<p>Keväällä 2017 voit käyttää harjoitustyön tekemiseen seuraavia vaihtoehtoisia teknologioita:</p>
 <ul>
-<li>PHP (ja halutessasi <a href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, <a href="http://laravel.com/" target="_blank">Lavarel</a> tai muu valitsemasi PHP-sovelluskehys)</li>
 <li><a href="http://www.djangoproject.com/" target="_blank">Django</a>, <a href="http://flask.pocoo.org/" target="_blank">Flask</a>, <a href="http://www.pylonsproject.org/" target="_blank">Pylons</a> (<a href="http://turbogears.org/" target="_blank">TurboGears</a>, <a href="http://bfg.repoze.org/" target="_blank">BFG</a>) tai muu valitsemasi Python-kehys </li>
 <li><a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a></li>
 <li><a href="http://nodejs.org/" target="_blank">Node.js</a> (+ esim. <a href="http://backbonejs.org/" target="_blank">Backbone.js</a>)</li>
+<li>PHP (ja halutessasi <a href="http://codeigniter.com/" target="_blank">CodeIgniter</a>, <a href="http://laravel.com/" target="_blank">Lavarel</a> tai muu valitsemasi PHP-sovelluskehys)</li>
 <li>.Net</li>
 </ul>
-<p>Nostamalla vaihtoehtoisia toteutusteknologioita esiin halutaan sekä herättää keskustelua ohjelmallisen sisällönhallinnan toteutusteknologioiden valinnasta että tarjota Ohjelmallista sisällönhallintaa suorittavilla PHP-osaajille uusia haasteita myös harjoitustyön tekemisessä.</p>
-<p>Huomaathan, että harjoitustyö on tarkoitus tehdä <strong>vapaavalintaisella Web-sovelluskehyksellä tai räätälöidyllä sisällönhallintajärjestelmällä</strong>. </p>
-<p>Ohjelmallisen sisällönhallinnan harjoitustyössä keskitytään järjestelmien toiminnallisuuksiin ja automatisoinnissa tarvittaviin prosesseihin. Tämä tarkoittaa käytännössä esimerkiksi yhteisöllisten toimintojen kehittämistä, sovelluksen keräämän datan esittämistä visualisoiden tai muuta (palvelun käyttäjän näkökulmasta) "luovaa" toimintaa. Teknisen arkkitehtuurin laadukas toteutus on siis nyt toissijainen tavoite. </p>
-<p>Harjoitustyön minimivaatimuksena on toteuttaa verkkopalvelu, jonka sisältöä on mahdollista lisätä, muokata, poistaa ja listata Web-käyttöliittymän tuella. Jokaisen harjoitustyön on toteutettava vähintään seuraavat ominaisuudet:</p>
+<p>
+  Käyttötarkoitukseen soveltuvan toteutusteknologian valinta on keskeinen osa onnistunutta Web-kehitysprojektia. 
+  Tästä syystä on hyödyllistä tutustua eri teknologioihin - vahvuuksineen ja heikkouksineen.
+</p>
+<p>
+  Halutessasi voit tehdä harjoitustyön myös räätälöitävällä sisällönhallintajärjestelmällä, esimerkiksi tiettyyn käyttötarkoitukseen muokatulla <a href="https://fi.wordpress.org/">WordPressillä</a>.
+</p>
+<p>
+  Ohjelmallisen sisällönhallinnan harjoitustyössä keskitytään järjestelmien toiminnallisuuksiin ja automatisoinnissa tarvittaviin prosesseihin. 
+  Tämä tarkoittaa käytännössä esimerkiksi yhteisöllisten toimintojen kehittämistä, sovelluksen keräämän datan esittämistä visualisoiden tai muuta (palvelun käyttäjän näkökulmasta) "luovaa" toimintaa. 
+  Teknisen arkkitehtuurin laadukas toteutus on siis nyt toissijainen tavoite. 
+</p>
+<p>
+  Harjoitustyön minimivaatimuksena on toteuttaa verkkopalvelu, jonka sisältöä on mahdollista lisätä, muokata, poistaa ja listata Web-käyttöliittymän tuella. 
+  Jokaisen harjoitustyön on toteutettava vähintään seuraavat ominaisuudet:</p>
 <ul>
-<li>sisäänkirjautuminen,</li>
-<li>uloskirjautuminen (”Kiitos ja tervetuloa uudestaan”),</li>
-<li>listaus sisällöstä,</li>
-<li>uuden sisältöartikkelin (resurssin) lisääminen ja</li>
-<li>sisältöartikkelin tietojen muokkaaminen.</li>
+  <li>sisäänkirjautuminen,</li>
+  <li>uloskirjautuminen (”Kiitos ja tervetuloa uudestaan”),</li>
+  <li>listaus sisällöstä,</li>
+  <li>uuden sisältöartikkelin (resurssin) lisääminen ja</li>
+  <li>sisältöartikkelin tietojen muokkaaminen.</li>
 </ul>
-<p>Harjoitustyön pohjana saa hyödyntää aikaisemmin esimerkiksi harrastusprojektina toteutettua sovellusta siinä tapauksessa, että sitä ei aikaisemmin ole miltään osin käytetty osana mitään opintosuoritusta. Vanhan työn käyttäminen ei kuitenkin anna erivapauksia pisteiden jakamisen perusteisiin: ominaisuuden on tässäkin tapauksessa vastattava täysin annettua kuvausta.</p>
-<p>Huomaathan, että harjoitustyön tuloksena ei välttämättä tarvitse syntyä tuotantokelpoista verkkopalvelua; erilaisten ominaisuuksien kehittelyä ja esittelemistä tukeva prototyyppi riittää oikein hyvin. Tuotantokelpoisen verkkopalvelun toteuttaminen prototyypin pohjalta onnistuu esimerkiksi <a href="http://matwww.ee.tut.fi/hypermedia/fi/opetus/opintojaksot/et" target="_blank">hypermedian erikoistyön</a> tai <a href="http://matriisi.ee.tut.fi/hypermedia/fi/opetus/opintojaksot/prj/" target="_blank">projektityön</a> puitteissa.</p>
-<p>Harjoitustyön tekeminen alkaa kehitysympäristön perustamisella ja valinnalla. Voit joko asentaa itsellesi LAMP-ympäristön tai perustaa ympäristön valitsemaasi Web-hotelliin. <a href="http://www.heroku.com/" target="_blank">Heroku</a> on erityisen kiinnostava vaihtoehto ja palvelimen tuunaamisesta kiinnostunut voi ottaa käyttöön vaikkapa <a href="http://aws.amazon.com/" target="_blank">Amazon AWS:n</a> -- nyt tavoitteena on kuitenkin edetä suoraviivaisesti kehittämään varsinaista sovellusta. Ohjeita kehitysympäristön perustamiseen löytyy esimerkiksi <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2015/wiki/harjoitusty%C3%B6#">Ohjelmallinen sisällönhallinta 2015 -ryhmästä</a>, <a href="https://hlab.ee.tut.fi/piiri/groups/ohjelmallinen-sisallonhallinta-2014/story/kehitysympariston-perustaminen-muutama-sana-lampist">CodeIgniter-ohjeesta</a> (Vaahtolammi 2014) ja <a href="https://iislab.ee.tut.fi/piiri/system/files/Vierailuluento-10022015.pdf">Docker- ja Ruby on Rails -ohjeesta</a> <strong>PDF</strong> (Hakulinen 2015). </p>
+<p>
+  Harjoitustyön pohjana saa hyödyntää aikaisemmin esimerkiksi harrastusprojektina toteutettua sovellusta siinä tapauksessa, että sitä ei aikaisemmin ole miltään osin käytetty osana mitään opintosuoritusta. 
+  Vanhan työn käyttäminen ei kuitenkin anna erivapauksia pisteiden jakamisen perusteisiin: ominaisuuden on tässäkin tapauksessa vastattava annettua kuvausta.
+</p>
+<p>
+  Huomaathan, että harjoitustyön tuloksena ei välttämättä tarvitse syntyä tuotantokelpoista verkkopalvelua; erilaisten ominaisuuksien kehittelyä ja esittelemistä tukeva prototyyppi riittää oikein hyvin. 
+</p>
+<p>
+  Harjoitustyön tekeminen alkaa kehitysympäristön perustamisella ja valinnalla. 
+  Voit joko asentaa itsellesi LAMP-ympäristön tai perustaa ympäristön valitsemaasi Web-hotelliin. 
+  <a href="http://www.heroku.com/" target="_blank">Heroku</a> on erityisen kiinnostava vaihtoehto ja palvelimen tuunaamisesta kiinnostunut voi ottaa käyttöön vaikkapa <a href="http://aws.amazon.com/" target="_blank">Amazon AWS:n</a> - nyt tavoitteena on kuitenkin edetä suoraviivaisesti kehittämään varsinaista sovellusta. 
+<!--   Ohjeita kehitysympäristön perustamiseen löytyy esimerkiksi <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2015/wiki/harjoitusty%C3%B6#">Ohjelmallinen sisällönhallinta 2015 -ryhmästä</a>, <a href="https://hlab.ee.tut.fi/piiri/groups/ohjelmallinen-sisallonhallinta-2014/story/kehitysympariston-perustaminen-muutama-sana-lampist">CodeIgniter-ohjeesta</a> (Vaahtolammi 2014) ja <a href="https://iislab.ee.tut.fi/piiri/system/files/Vierailuluento-10022015.pdf">Docker- ja Ruby on Rails -ohjeesta</a> <strong>PDF</strong> (Hakulinen 2015).  -->
+</p>
 <h3>Esimerkkejä aiheista</h3>
 <p>Opiskelija saa valita harjoitustyönsä aiheen vapaasti, luonnollisesti hyvän maun puitteissa:</p>
 <p>Esimerkkejä aiheista:</p>
-<p>Toteuta <strong>maailman paras opinto-opas</strong>, joka esittää opinto-oppaan tiedot opiskelijalle hyödyllisellä tavalla. Minkälaisia vuorovaikutteisia ominaisuuksia opinto-oppaassa voisi olla? Miten opinto-oppaan tietoja voi visualisoida? Onko opinto-oppaasta mahdollista tehdä yhteisöllinen? </p>
-<p><strong>Koostepalvelu (mashup)</strong> Olennaisen osan nykyaikasta Web-palvelutarjontaa muodostavat erilaiset koostepalvelut (mashup), jotka koostavat, yhdistelevät, jalostavat ja rikastavat eri lähteistä kerättyä tietoa. Keskeisessä roolissa koostepalvelujen toteuttamisessa ovat verkkopalvelujen tarjoamat rajapinnat (Web API), joiden tuella tietoja voidaan ohjelmallisesti siirtää verkkopalvelujen välillä. Erilaiset paikkatiedon ja kartan yhdistelmät ovat yleisimmin toteutettuja koostepalveluita, mutta esimerkiksi <a href="http://d3js.org/" target="_blank">D3.js-kirjaston</a> ja avoimen datan yhdistelmällä saa aikaan paljon muutakin. </p>
-<p><strong>Uuden ajan reittiopas</strong> Esimerkiksi TKL tarjoaa jo käyttäjälle varsin käteviä palveluita bussiaikataulujen selvittämiseen, mutta parannettavaakin on. Palvelut eivät esimerkiksi osaa auttaa käyttäjää lähimmän pysäkin valinnassa: parhaassa tapauksessa käyttäjä voisi etsiä sopivan bussin valitsemalla esim. "Kotiin". Aikaisemmin kuljettujen reittien muistaminen ja niiden ehdottaminen auttaisivat myös käyttäjää minimoimaan palvelun kanssa käytetyn ajan. Mitä muita toimintoja palvelu voisi toteuttaa?</p>
-<p>Edellä mainittuja aiheita voi vapaasti muokata siten, että ne sopivat paremmin tekijän omiin tarpeisiin. Erityisen suositeltavaa on keksiä jokin ehdotettuja parempi aihe. Inspiraatiota voit kerätä vaikkapa tutustumalla Demolassa tarjolla oleviin <a href="http://tampere.demola.fi/projects" target="_blank">projektiaiheisiin</a>, <a href="http://apps4finland.fi/kilpailutyot/" target="_blank">Apps4Finland-kilpailutöihin</a> tai programmableweb.com-sivuston <a href="http://www.programmableweb.com/mashups" target="_blank">koostepalveluesimerk</a><a href="http://www.programmableweb.com/mashups" target="_blank">keihin</a>.</p>
+<p>
+  Toteuta <strong>maailman paras opinto-opas</strong>, joka esittää opinto-oppaan tiedot opiskelijalle hyödyllisellä tavalla. 
+  Minkälaisia vuorovaikutteisia ominaisuuksia opinto-oppaassa voisi olla? Miten opinto-oppaan tietoja voi visualisoida? 
+  Onko opinto-oppaasta mahdollista tehdä yhteisöllinen? 
+</p>
+<p>
+  <strong>Koostepalvelu (mashup)</strong> Olennaisen osan nykyaikasta Web-palvelutarjontaa muodostavat erilaiset koostepalvelut (mashup), jotka koostavat, yhdistelevät, jalostavat ja rikastavat eri lähteistä kerättyä tietoa. 
+  Keskeisessä roolissa koostepalvelujen toteuttamisessa ovat verkkopalvelujen tarjoamat rajapinnat (Web API), joiden tuella tietoja voidaan ohjelmallisesti siirtää verkkopalvelujen välillä. 
+  Erilaiset paikkatiedon ja kartan yhdistelmät ovat yleisimmin toteutettuja koostepalveluita, mutta esimerkiksi <a href="http://d3js.org/" target="_blank">D3.js-kirjaston</a> ja avoimen datan yhdistelmällä saa aikaan paljon muutakin. 
+</p>
+<p>
+  <strong>Uuden ajan reittiopas</strong> Esimerkiksi TKL tarjoaa jo käyttäjälle varsin käteviä palveluita bussiaikataulujen selvittämiseen, mutta parannettavaakin on. 
+  Palvelut eivät aina osaa auttaa käyttäjää lähimmän pysäkin valinnassa: parhaassa tapauksessa käyttäjä voisi etsiä sopivan bussin valitsemalla esim. "Kotiin". 
+  Aikaisemmin kuljettujen reittien muistaminen ja niiden ehdottaminen auttaisivat myös käyttäjää minimoimaan palvelun kanssa käytetyn ajan. 
+  Mitä muita toimintoja palvelu voisi toteuttaa?
+</p>
+<p>
+  Edellä mainittuja aiheita voi vapaasti muokata siten, että ne sopivat paremmin tekijän omiin tarpeisiin. 
+  Erityisen suositeltavaa on keksiä jokin ehdotettuja parempi aihe. 
+  Inspiraatiota voit kerätä vaikkapa tutustumalla Demolassa tarjolla oleviin <a href="http://tampere.demola.fi/projects" target="_blank">projektiaiheisiin</a>, <a href="http://apps4finland.fi/kilpailutyot/" target="_blank">Apps4Finland-kilpailutöihin</a> tai programmableweb.com-sivuston <a href="http://www.programmableweb.com/mashups" target="_blank">koostepalveluesimerkkeihin</a>.
+</p>
+
 <h3>Harjoitustyöpisteet ja arvosana</h3>
-<p>Harjoitustyöstä voi kerätä pisteitä yhteensä 18 kappaletta. Harjoitustyöstä kerättävät pisteet vaikuttavat arvosanaan <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/pruju/lv33/esitys.php#(14)" target="_blank">avausluennolla esitetyn taulukon mukaisesti</a>.</p>
+<p>
+  Harjoitustyöstä voi kerätä pisteitä yhteensä 18 kappaletta. 
+  Harjoitustyöstä kerättävät pisteet vaikuttavat arvosanaan <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2016/pruju/lv33/esitys.php#(14)" target="_blank">avausluennolla esitetyn taulukon mukaisesti</a>.
+</p>
 <p>Neljä vaihetta:</p>
 <ol>
-<li>Kehitysympäristön perustaminen: LAMP käyntiin omalle koneelle tai esimerkiksi Herokun käyttöönotto. Katso <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/harjoitusty%C3%B6n-ensimm%C3%A4inen-vaihe">tarkempi ohje</a>. Palautus <strong>perjantaihin 18. maaliskuuta kello 17</strong> mennessä. (3 pistettä)</li>
+<li>
+  Kehitysympäristön perustaminen: LAMP käyntiin omalle koneelle tai esimerkiksi Herokun käyttöönotto. 
+  Katso <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/harjoitusty%C3%B6n-ensimm%C3%A4inen-vaihe">tarkempi ohje</a>. 
+  Palautus <strong>perjantaihin 17. maaliskuuta kello 17</strong> mennessä. (3 pistettä)</li>
 <li>Esimerkkisovellus valitsemallasi teknologialla: Lisää-näytä-päivitä-poista (CRUD) -toiminnot sekä tuki kirjautumiseen ja rekisteröitymiseen. Palautus <strong>perjantaihin 1. huhtikuuta kello 17</strong> mennessä. (3 pistettä)</li>
 <li>Datarajapinnan käyttö: sisältöjen listaaminen ja yksittäisen sisällön näyttäminen JSON- tai XML-muodossa. Palautus <strong>perjantaihin 15. huhtikuuta kello 17</strong> mennessä. (3 pistettä)</li>
 <li>Visualisointi: sovelluksen keräämän tai datarajapinnasta luetun datan ei-triviaali visualisointi (siis jotain muuta kuin perinteistä toimistografiikkaa tai joukko kartalle heitettyjä tietoja). Palautus <strong>perjantaihin 6. toukokuuta kello 17</strong> mennessä. (3 pistettä)</li>
