@@ -9,12 +9,24 @@ Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentop
 
 Tulossa:
 
-* perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon) 
+<!-- * perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon)  -->
 * maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
+* maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto): Data, analytiikka ja journalismi (Teemo Tebest)
+
+## Luentoviikko 3.7 (viikko 8) Sisällönhallinta- ja julkaisujärjestelmät
+
+[Esitys](luento/37/esitys.pdf) PDF-muodossa.
+
+Luento käyntiin sivupohjamoottoridemolla ([markdown](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/markdown), [flask/template](https://github.com/jukkahuhtamaki/pcm-demo/blob/master/flask/templates/visualize.html))  
+Sisällönhallinta- ja julkaisujärjestelmien toiminnallisuus. 
+Data, informaatio ja sisältö. 
+Ja niin edelleen, ks. esitys. 
+Keskustelua ja esimerkkejä automatisoinnista.
+Koodiklinikalla [Bootstrap](http://getbootstrap.com/)-demo.
 
 ## Luentoviikko 3.6 (viikko 7) Verkkopalvelun arkkitehtuuri ja yleinen toiminnallisuus
 
-Esitys [hypertekstinä](luento/36/esitys.html).
+[Esitys](luento/36/esitys.html) hypertekstinä.
 
 [Harjoitustyöohje](harjoitustyo) on julkaistu.
 
