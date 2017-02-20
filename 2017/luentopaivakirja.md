@@ -21,7 +21,7 @@ Luento käyntiin sivupohjamoottoridemolla ([markdown](https://github.com/jukkahu
 Sisällönhallinta- ja julkaisujärjestelmien toiminnallisuus. 
 Data, informaatio ja sisältö. 
 Ja niin edelleen, ks. esitys. 
-Keskustelua ja esimerkkejä automatisoinnista.
+Keskustelua ja esimerkkejä [automatisoinnista](02/20/automaatio.html.
 Koodiklinikalla [Bootstrap](http://getbootstrap.com/)-demo.
 
 ## Luentoviikko 3.6 (viikko 7) Verkkopalvelun arkkitehtuuri ja yleinen toiminnallisuus
