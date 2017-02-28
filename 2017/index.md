@@ -11,5 +11,5 @@ Opintojakson kevään 2017 toteutuskerta rakentuu tämän Github-kokonaisuuden y
 
 * [Luentopäiväkirja](luentopaivakirja) kokoaa yhteen toteutuskerran keskeiset tiedot ja resurssit. 
 * [Teknologiademot](teknologiademo) tukevat harjoitustyön käynnistämistä.
-* Harjoitustyöohje esittelee harjoitustyön tekemisen käytännöt. 
+* [Harjoitustyöohje](harjoitustyo) esittelee harjoitustyön tekemisen käytännöt. 
 * [Suorittaminen](suorittaminen) kertoo pisteytyksen ja suorittamisen yksityiskohdat.
