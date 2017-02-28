@@ -13,6 +13,10 @@ Tulossa:
 * maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
 * maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto): Data, analytiikka ja journalismi (Teemo Tebest)
 
+## Luentoviikko 4.1 (viikko 10) SUDL ja teknologiademoja
+
+Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esittelee Smart University Design Labin ja kello 15.10 Mikael Lagerbom demoaa Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla on esittelyssä Django.
+
 ## Luentoviikko 3.7 (viikko 8) Sisällönhallinta- ja julkaisujärjestelmät
 
 [Esitys](luento/37/esitys.pdf) PDF-muodossa.
