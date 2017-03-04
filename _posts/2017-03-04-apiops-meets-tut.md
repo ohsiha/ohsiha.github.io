@@ -1,7 +1,9 @@
 ---
 layout: default
-title: APIOps Tampere visits #ohsiha
+title: APIOps Tampere visits TUT
 ---
+
+# APIOps Tampere visits TUT
 
 [APIOps Tampere](https://www.meetup.com/APIOps-Tampere/) meetup group visits Tampere University of Technology and course Programmatic Content Management ([Ohjelmallinen sisällönhallinta](https://ohsiha.github.io/2017/luentopaivakirja), [#ohsiha](https://twitter.com/hashtag/ohsiha?f=tweets&vertical=default)).
 
