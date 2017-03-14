@@ -8,11 +8,13 @@ Opintojakson sisältö tarkemmin
 
 Datan kerääminen: raapijat ja ryömijät; dataformaatit ja niiden ohjelmallinen käsittely; datakeskeinen ohjelmointi
 
-Datan siivoaminen
+Datan siivoaminen ja käsittely: vuorovaikutteinen laskenta; komentorivityövälineet
 
-Ennakoiva analytiikka: ohjaamaton oppiminen; lineaarinen regressio; monimuuttujaregressio
+Ennakoiva analytiikka: lineaarinen regressio; monimuuttujaregressio
 
-Luokittelu: ohjaamaton oppiminen
+Luokittelu: ohjattu oppiminen
+
+Ryvästäminen: ohjaamaton oppiminen
 
 Datan ohjelmallinen visualisointi
 
