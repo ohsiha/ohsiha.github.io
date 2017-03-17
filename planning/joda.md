@@ -1,8 +1,6 @@
-joda.md
+# Johdanto datatieteisiin
 
-Johdanto datatieteisiin
-
-Opintojakson tavoitteena on esitellä opiskelijoille riittävät tiedot datatiedeosaamiseen kuuluvien taitojen hankkimiseen TTY:n opetustarjonnasta. Datatiede rakentuu neljän laajan kokonaisuuden varaan: liiketoimintaosaaminen, ohjelmointi- ja tietokantaosaaminen, tilastollinen analyysi ja datalähtöinen viestintä ja visualisointi. 
+Datatiede rakentuu neljän laajan kokonaisuuden varaan: liiketoimintaosaaminen, ohjelmointi- ja tietokantaosaaminen, tilastollinen analyysi ja datalähtöinen viestintä ja visualisointi. Opiskelijoilta toivotaan perusosaamista näiltä aloilta. Opintojaksolla on tavoitteena syventyä näihin aiheisiin datatieteen näkökulmasta sekä esitellä opiskelijoille riittävät tiedot datatiedeosaamiseen kuuluvien taitojen hankkimiseen TTY:n opetustarjonnasta.
 
 Opintojakson sisältö tarkemmin
 
