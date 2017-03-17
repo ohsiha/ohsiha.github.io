@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ansioitunut tekijä kertoo: Data ja journalismi
+title: Data ja journalismi
 ---
 
 # Ansioitunut tekijä kertoo: Data journalismin työvälineenä
