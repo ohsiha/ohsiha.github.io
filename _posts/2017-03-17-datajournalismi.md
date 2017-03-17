@@ -6,7 +6,7 @@ title: Data ja journalismi
 # Ansioitunut tekijä kertoo: Data journalismin työvälineenä
 
 Data journalismin työvälineenä -vierailuluennolla Teemo Tebest kertoo miten data auttaa Yleä tekemään parempia juttuja ja toisaalta ymmärtämään paremmin yleisöjä. 
-Luennolla käydään läpi datajournalisten esimerkkien kautta mitä ja miten Ylessä milläkin alustalla mitataan ja mitä datasta on mahdollista saada irti.
+Luennolla käydään läpi datajournalismia käsittelevien esimerkkien kautta mitä ja miten Ylessä milläkin alustalla mitataan ja mitä datasta on mahdollista saada irti.
 
 Teemo Tebest 
 ([@teelmo](https://twitter.com/teelmo), 
