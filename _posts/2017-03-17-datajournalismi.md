@@ -23,5 +23,5 @@ Luennolle on vapaa pääsy.
 Luennon keskeisenä tavoitteena on luodata oppiaineiden välisiä jaettuja kiinnostuksen kohteita. 
 Tästä syystä kaikki teemasta kiinnostuneet ovat erityisen tervetulleita vierailuluennolle - yli oppilaitos- ja organisaatiorajojen!
 
-Lisätietoja luennosta antaa [Jukka Huhtamäki](http://www.tut.fi/en/person-id-card/index.htm?id=8883).
+Lisätietoja luennosta antaa [Jukka Huhtamäki](http://www.tut.fi/fi/henkilokortti/index.htm?id=8883).
 
