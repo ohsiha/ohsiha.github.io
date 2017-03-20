@@ -13,7 +13,7 @@ Tulossa:
 * maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
 * maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto): Data, analytiikka ja journalismi (Teemo Tebest)
 
-Luentoviikko 4.3 (viikko 12): Koostepalvelut
+## Luentoviikko 4.3 (viikko 12): Koostepalvelut
 
 Esitys hypertekstinä ja pelkistettynä versiona.
 
