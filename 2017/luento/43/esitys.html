@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+         <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <title>MATHM-81000 Ohjelmallinen sisällönhallinta :: Luentoviikko 4.3</title>
+          <meta name="copyright" content="Esitys Jukka Huhtamäki. Käytössä HTML Slidy." />
+          <meta name="font-size-adjustment" content="1" />
+          <link rel="stylesheet" type="text/css" media="print" href="../Slidy/print.css" />    
+          <link rel="stylesheet" href="../Slidy2/styles/slidy.css" type="text/css"
+      media="screen, projection" />
+
+<!--    <link rel="stylesheet" href="../Slidy2/styles/w3c-blue.css" type="text/css"
+      media="screen, projection" /> -->
+    <link rel="stylesheet" href="../Slidy2/styles/iislab.css" type="text/css"
+      media="screen, projection" />
+    <script src="../Slidy2/scripts/slidy.js" type="text/javascript"></script><style type="text/css">
+  .label {
+    display: block;
+    width: 30ex;
+    float: left;
+  }
+</style>   
+   
+       <!-- start Mixpanel -->
+<!--    <script type="text/javascript">
+    //<![CDATA[
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+   g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+   mixpanel.init("d5293bf02815fd090b6340416496ef8a");</script> -->
+   <!-- end Mixpanel -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>   
+    <!--
+    <script type="text/javascript">
+     $(document).ready(function () {
+     mixpanel.track('Open ' + document.title);
+   });
+    //]]>
+     </script>   -->
+</head>
+
+<body>
+  <div class="background">
+    <div class="header"></div>
+  </div>      
+
+<div class="slide cover">
+  <h1><a href="https://ohsiha.github.io/2017/luentopaivakirja">Ohjelmallinen sisällönhallinta, kevät 2017</a></h1>
+  <p>Luentoviikko 4.3. Koostepalvelut</p>
+  <p>Jukka Huhtamäki</p>
+</div> 
+
+<div class="slide">
+  <h1>Luentoviiko 4.3. Koostepalvelut</h1>
+  <p>
+     Olisi hienoa, jos mahdollisimman moni keväällä 2017 tehdyistä Ohjelmallisen sisällönhallinnan 
+     <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/harjoitusty%C3%B6">harjoitustöistä</a> olisi nimenomaan koostepalvelu.
+  </p>
+  <p>
+       Alkuvaiheessa ohjelmalliseen sisällönhallintaan liittyvä tekeminen painottuu yksittäisten järjestelmien 
+       arkkitehtuurin ja vuorovaikutuksen toteuttamiseen.
+  </p>
+  <p>
+    Kuitenkin vieläkin mielenkiintoisempaa on tarkastelun yleistäminen järjestelmien väliseen toiminnallisuuteen. 
+    Ajatus <dfn>hypermediasta sovelluksen tilan koneena</dfn> 
+    (<q>hypermedia as the engine of application state</q> (Fielding, 2000)) liittyy vahvasti tähän.
+  </p>
+  <p>
+    <dfn>Koostepalvelut</dfn> esittelevät tavan luoda uusia palveluja olemassa olevia tietosisältöjä ja komponentteja yhdistelemällä. 
+  </p>
+  <p>
+    Huomaathan, että <strong>luentomateriaali on nyt osin lähdemateriaalin varassa</strong>. 
+    Varmista, että osaat tarvittaessa kuvata avoimen yhdistetyn datan ja REST-mallin perusajatuksen sekä antaa periaatteellisen kuvauksen REST-mallin mukaisesti toimivasta järjestelmästä.  
+  </p>
+</div>
+
+<div class="slide">
+  <h1>Yhdistetty data</h1>
+  <ul>
+    <li>Web on pullollaan dataa ja sitä on Webin alkuajoista lähtien sovellettu myös ohjelmallisesti.</li>
+    <li>HTML-muotoisen tiedon <dfn>ryömimiseen</dfn> (crawling) ja <dfn>raapimiseen</dfn> (scraping) liittyy kuitenkin erilaisia teknisiä ja esimerkiksi tekijänoikeuksiin liittyviä ongelmia. </li>
+    <li>Semanttisen Webin ajatuksiin perustuva <dfn><a href="http://linkeddata.org/">yhdistetty data</a></dfn> 
+      mahdollistaa datan ohjelmallisen selaamisen ja lukemisen. </li>
+  </ul>
+  <blockquote>
+  <p>
+    LinkedData is to spreadsheets and databases what the Web of hypertext documents is to word processor files.
+    (<cite><a href="http://esw.w3.org/LinkedData">esw.w3.org/LinkedData</a></cite>)
+  </p>
+  <ol>
+   <li>Use URIs as names for things</li>
+   <li>Use HTTP URIs so that people can look up those names.</li>
+   <li>When someone looks up a URI, provide useful information.</li>
+   <li>Include links to other URIs. so that they can discover more things.</li>
+</ol>
+</blockquote>
+</div>
+
+<div class="slide">
+<h1>Yhdistetty julkinen data Suomessa</h1>
+<p class="subhead">Yhdistetty julkinen data on hyvin ajankohtainen asia myös Suomessa:</p>
+<ul>
+  <li>Vuonna 2015 alkanut 6Aika-hanke nojaa vahvasti avoimeen dataan.</li>
+  <li>Helsinki Region Infoshare ja Open Data Tampere ovat yhdessä avanneet yli 1000 suomalaista datasettiä.</li> 
+  <li>Aiheeseen liittyvää tutkimus- ja kehitystyötä on aikaisemmin tehty esimerkiksi 
+      <a href="http://www.seco.tkk.fi/projects/ldf/">Linked Data Finland -hankkeessa</a>.
+  </li>
+  <li>
+    Kiinnostus ja paine tietosisältöjen avaamiseen tarkoittanee sitä, että tulevina vuosina 
+    koostepalveluiden kehittäjien ja muiden ohjelmallisen sisällönhallinnan osaajien käyttöön 
+    tulee kosolti lisää mielenkiintoista aineistoa.</li>
+ <li>
+    Mahdollisuus: toteuta <a href="http://openfinlandchallenge.fi/">Open Finland Challenge -kilpailuehdotus</a> 
+    Ohjelmallisen sisällönhallinnan harjoitustyönä!
+ </li>
+</ul>
+</div>
+<div class="slide">
+<h1>Avoin data: resursseja ja lisätietoa</h1>
+<ul>
+    <li><a href="http://openfinlandchallenge.fi/aineistot/">Open Finland Challenge: aineistot</a></li>
+    <li><a href="https://www.avoindata.fi/">avoindata.fi</a></li>
+    <li><a href="http://data.tampere.fi">data.tampere.fi</a></li>
+    <li><a href="http://opengov.fi/data/">opengov.fi<sup>beta</sup></a></li>
+    <li><a href="http://www.julkinendata.fi/">julkinendata.fi</a></li>
+    <li><a href="http://avoindata.net/">avoindata.net</a></li>
+    <li><a href="http://fi.okfn.org/">Open Knowledge Finland</a></li>
+    <li><a href="https://www.facebook.com/groups/fi.okfn/">Finnish Open Data Ecosystem</a></li>
+    <li><a href="https://www.facebook.com/groups/175241005863017/">Open Data Tampere</a></li>
+</ul>
+</div>
+
+<div class="slide intermission">
+  <h1>Koostepalvelut</h1>
+  <p>Koostepalvelut esittelevät tavan luoda uusia toiminnallisuuksia olemassa olevista resursseista koostamalla</p>
+</div>
+
+<div class="slide">
+  <h1>Koostepalvelut</h1>
+  <p>
+    <dfn>Koostepalvelut</dfn> (mash-up) muodostavat olennaisen osan nykyaikaista Web-palvelutarjontaa:
+  </p>
+  <ul>
+    <li>Koostepalvelut koostavat, yhdistelevät, jalostavat ja   rikastavat eri lähteistä kerättyä tietoa ja esittävät sen ilmaisuvoimaisilla tavoilla. </li>
+    <li>Keskeisessä roolissa koostepalvelujen toteuttamisessa ovat verkkopalvelujen tarjoamat rajapinnat (Web API), 
+    joiden tuella tietoja voidaan ohjelmallisesti siirtää verkkopalvelujen välillä.</li>
+    <li>Erityisesti erilaiset paikkatiedon ja karttojen yhdistelmät ovat edelleen erityisen ajankohtaisia.</li>
+  </ul>          
+  <p>
+    Koostepalvelujen taustalla lymyävät informaation visualisoinnin perusajatukset. 
+    Resursseja voidaan koostaa esimerkiksi RESTful-periaatteen mukaisesti toimivista palveluista.
+  </p>
+ </div>
+
+<div class="slide">
+  <h1>Kielenkäytöstä</h1>
+  <p class="subhead">
+    Myös koostepalvelujen tapauksessa kielenkäyttö on usein värikästä. 
+    Mash-up -sanalle on esitetty useita käännöksiä:
+  </p>
+  <ul>
+    <li>Survos, muusaus tai fuusaus (<a href="http://nuppineulat.blogspot.com/2006/11/mashup-on-suomeksi-fuusaus.html">Ojala, 2006</a>)</li>
+    <li>"'fuusaus' eli sulauttaminen tai yhdistäminen" (Hintikka, 2007).</li>
+    <li>Koostepalvelu (vrt. <a href="http://tuhatsanaa.net/syotteet_jaakaapin_oveen#comment-4994">Aalto, 2009</a>)</li>
+  </ul>
+  <p>Käännös <em>survos</em> kuvaisi hyvin koostepalvelun perimmäistä luonnetta:</p> 
+  <ul>
+    <li>Koostepalvelun kehittäjä kerää yhteen dataa sekä ohjelma- ja käyttöliittymäkomponentteja.</li>
+    <li>Seos surautetaan (survotaan) selaimen tai muun ajoympäristön toimesta saumattomaksi kokonaisuudeksi, joka on käyttäjälle enemmän kuin osiensa summa.</li> 
+  </ul>
+  <p>Käsitteen jalkauttaminen on kuitenkin haastavaa eikä sen tulkinta ole välttämättä ilmeinen kaikille.</p>
+</div>
+
+<div class="slide">    
+   <h1>Koostamisen tasot</h1>
+   <p>
+       Koostepalvelut viittaavat tapaan toteuttaa verkkopalvelujen toiminnallisuuksia 
+       <strong>olemassa olevia resursseja koostamalla</strong>.
+   </p> 
+   <p>    
+       Yleistymässä olevan näkemyksen mukaan 
+       koostamista tapahtuu kolmella tasolla (vrt. Yu, Benatallah, Casati ja Daniel, 2008):
+   </p>
+   <ul class="incremental">
+      <li>Sisällön koostaminen: RSS/Atom, Web APIt (REST), HTML-muotoisen tiedon jalostaminen (screen scraping), 
+          <a href="http://www.w3.org/TR/grddl/">GRDDL</a>
+      </li>
+      <li>Sovelluslogiikan koostaminen: datan koostaminen, suodattaminen ja muuntaminen (esimerkiksi <a href="http://pipes.yahoo.com/">Yahoo! Pipes</a> 
+          ja <a href="http://www.google.com/fusiontables/">Google Fusion Tables</a>); 
+          datan käsittely selaimessa, kommunikointi selaimen ja palvelimen välillä 
+          (vrt. <a href="http://developer.yahoo.com/yui/">Yahoo! UI Library</a>)</li>
+      <li>Käyttöliittymien koostaminen: Google Maps ja Earth, YouTube, <a href="http://mbostock.github.com/d3/">d3.js</a>, ..., vimpaimet.</li>
+   </ul>
+   <div class="incremental">
+   <p>
+      Ensimmäiset koostepalvelut poimivat joukon dataa palvelusta X ja latoivat tiedot näkyviin erityisesti kartalle. 
+      Suomalainen <a href="http://www.tilannehuone.fi/halytysmap.php">Hälytykset kartalla</a> oli eräs 
+      kotimaisista edelläkävijoistä.  
+   </p></div>
+</div>
+<div class="slide">
+  <h1>Esimerkkejä kehitysympäristöistä</h1>          
+  <p class="subhead">Koostepalveluiden kehitystyön löytyy tukku kilpailevia kehitysympäristöjä:</p>
+  <ul>
+    <li><strong>Yahoo! Pipes</strong>: Putkilinjaperustainen datan koostaminen ja prosessointi. Tuottaa dataa, ei käyttöliittymiä.</li>
+    <li><strong>Microsoft Popfly</strong>: Nyt jo edesmennyt Popfly oli komponenttipohjainen, 
+        vahvasti visuaalinen ympäristö. Koostepalvelujen jakelu Silverlight-muodossa. </li>
+    <li><strong>Intel Mash Maker</strong>: Ydinajatuksena tiedon lukeminen määrämuotoon ja sijoittaminen osaksi toisia (kolmannen osapuolen) sivuja. Esimerkiksi weather.com-sivuston säätietojen upottaminen osaksi kaupunkilistausta.</li>
+    <li>Muita: QedWiki, Google Mashup Editor, Dapper, ...</li>
+  </ul>
+  <p>
+    Lähestymistavat poikkeavat rajusti eri vaihtoehtojen välillä. Erityisesti Intel Mash Makerin esittelemä toimintatapa 
+    tiedon suodattamiseen ja yhdistelemiseen on perehtymisen arvoinen, kuten myös putkilinjojen perusidea.
+  </p>
+  <p>
+    Taannoisessa 
+    <a href="http://www.cs.tut.fi/~taivalsa/kurssit/MADS2008/">MADS-seminaarissa</a> 
+    järjestelmien keskeiseksi haasteeksi todettiin niiden keskeneräisyys ja joustamattomuus: 
+    triviaalit asiat onnistuvat, mutta aidot haasteet muodostuvat ylivoimaisiksi ja luovuus on rajattua.
+  </p>
+</div>
+
+<div class="slide intermission">
+    <h1>Esimerkkisovellus: MyTube</h1>
+    <p>Käydään seuraavaksi läpi erään koostepalvelun toteutuksen ydinkohtia</p>
+</div>
+<div class="slide">
+  <h1>Esimerkki: Henkilökohtainen YouTube-soitin</h1>
+  <p class="subhead">
+      Sujuvoitetaan YouTube-videoiden hakemista yksinkertaisella koostepalvelulla:
+  </p>
+  <ul>
+    <li>Käytetään videoiden hakuehtoina iTunes-soittimen soittolistoja.</li>
+    <li>Tuotetaan soittolistaa vastaava lista.</li>
+    <li>Ryyditetään näkymä Last.fm-palvelusta poimitulla esittäjän kuvalla ja kuvauksella.</li>
+  </ul>
+  <p>Poimintoja toteutuksesta:</p>
+  <ul>
+    <li>iTunes tallentaa soittolistojen tiedot XML-muodossa.</li>
+    <li>YouTuben <a href="http://www.youtube.com/dev">kehittäjärajapinnan</a> 
+      <a href="http://code.google.com/intl/fi/apis/youtube/getting_started.html#widgets">Video 
+            Bar -vimpain</a> mahdollistaa videokollaasien tuottamisen sanahaun perusteella.</li>
+    <li>Tiedon prosessointi on toteutettu Hlabin Wille-visualisointikehyksellä: 
+        koostepalveluja ei aina ohjelmoida Javascriptillä.
+    </li>
+  </ul>
+</div>
+
+<div class="slide">
+    <h1>iTunes ja soittolistojen vienti</h1>
+    <p class="subhead">iTunes tukee soittolistojen vientiä XML-muodossa:</p>
+<pre>
+&lt;key>Tracks&lt;/key>
+&lt;dict>
+&lt;key>6384&lt;/key>
+&lt;dict>
+&lt;key>Track ID&lt;/key>&lt;integer>6384&lt;/integer>
+&lt;key>Name&lt;/key>&lt;string>Ore D'Amore&lt;/string>
+&lt;key>Artist&lt;/key>&lt;string>Mondo Cane&lt;/string>
+&lt;key>Album Artist&lt;/key>&lt;string>Mondo Cane&lt;/string>
+&lt;key>Album&lt;/key>&lt;string>Mondo Cane @ Salsomaggiore, 2007/05/26&lt;/string>
+&lt;key>Genre&lt;/key>&lt;string>Italian 60's&lt;/string>
+&lt;key>Kind&lt;/key>&lt;string>MPEG audio file&lt;/string>
+&lt;key>Size&lt;/key>&lt;integer>4169280&lt;/integer>
+&lt;key>Total Time&lt;/key>&lt;integer>162429&lt;/integer>
+&lt;key>Track Number&lt;/key>&lt;integer>3&lt;/integer>
+&lt;key>Year&lt;/key>&lt;integer>2007&lt;/integer>
+&lt;key>Date Modified&lt;/key>&lt;date>2008-07-21T12:01:01Z&lt;/date>
+&lt;key>Date Added&lt;/key>&lt;date>2008-07-21T11:36:00Z&lt;/date>
+&lt;key>Bit Rate&lt;/key>&lt;integer>192&lt;/integer>
+&lt;key>Sample Rate&lt;/key>&lt;integer>44100&lt;/integer>
+&lt;key>Play Count&lt;/key>&lt;integer>8&lt;/integer>
+&lt;key>Play Date&lt;/key>&lt;integer>3308737172&lt;/integer>
+&lt;key>Play Date UTC&lt;/key>&lt;date>2008-11-05T11:39:32Z&lt;/date>
+&lt;key>Album Rating&lt;/key>&lt;integer>100&lt;/integer>
+&lt;key>Album Rating Computed&lt;/key>&lt;true/>
+&lt;key>Artwork Count&lt;/key>&lt;integer>2&lt;/integer>
+&lt;key>Persistent ID&lt;/key>&lt;string>4676EDED9FE35AD5&lt;/string>
+&lt;key>Track Type&lt;/key>&lt;string>File&lt;/string>
+&lt;key>Location&lt;/key>&lt;string>file://localhost/Users/username/Music/iTunes/iTunes%20Music/Mondo%20Cane/Mondo%20Cane%20@%20Salsomaggiore,%202007_05_26/03%20Ore%20D'Amore.mp3&lt;/string>
+&lt;key>File Folder Count&lt;/key>&lt;integer>4&lt;/integer>
+&lt;key>Library Folder Count&lt;/key>&lt;integer>1&lt;/integer>
+&lt;/dict>   
+</pre>
+</div>
+
+<div class="slide">
+  <h1>Soittolistan sisältö XML-muodossa</h1>
+  <p class="subhead">iTunes-soittolistasta voidaan tuottaa yleinen esitys soittolistan sisällöstä. </p>
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;tracklist>
+&lt;track id="4676EDED9FE35AD5">
+&lt;name>Ore D'Amore&lt;/name>
+&lt;album>
+&lt;name>Mondo Cane @ Salsomaggiore, 2007/05/26&lt;/name>
+&lt;/album>
+&lt;artist>
+&lt;name>Mondo Cane&lt;/name>
+&lt;/artist>
+&lt;/track>
+&lt;!-- Muut kappaleet -->  
+&lt;/tracklist>    
+</pre>
+  <p>Kappaleista on nyt kerätty minimitiedot: alkuperäisessä datassa olisi enemmänkin hyödynnettävää.</p>
+</div>
+
+<div class="slide">
+  <h1>Last.fm: Yhtyeen tiedot</h1>
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;lfm status="ok">
+&lt;artist>
+&lt;name>Mondo Cane&lt;/name>
+&lt;mbid>8a5f6d61-0dfe-48e8-9cd6-ba0eaf9cfe67&lt;/mbid>
+&lt;url>http://www.last.fm/music/Mondo+Cane&lt;/url>
+&lt;image size="small">http://userserve-ak.last.fm/serve/34/2167334.jpg&lt;/image>
+&lt;image size="medium">http://userserve-ak.last.fm/serve/64/2167334.jpg&lt;/image>
+&lt;image size="large">http://userserve-ak.last.fm/serve/126/2167334.jpg&lt;/image>
+&lt;streamable>1&lt;/streamable>
+&lt;stats>
+&lt;listeners>2413&lt;/listeners>
+&lt;playcount>34382&lt;/playcount>
+&lt;/stats>
+&lt;similar>
+&lt;artist>
+&lt;name>Mike Patton&lt;/name>
+&lt;url>http://www.last.fm/music/Mike+Patton&lt;/url>
+&lt;image size="small">http://userserve-ak.last.fm/serve/34/232922.jpg&lt;/image>
+&lt;image size="medium">http://userserve-ak.last.fm/serve/64/232922.jpg>&lt;/image>
+&lt;image size="large">http://userserve-ak.last.fm/serve/126/232922.jpg&lt;/image>
+&lt;/artist>
+&lt;!-- Loput vastaavat esittäjät -->
+&lt;/similar>
+&lt;bio>
+&lt;published>Sat, 28 Mar 2009 08:22:40 +0000&lt;/published>
+&lt;summary>&lt;![CDATA[Mondo Cane is an upcoming album by Mike Patton. ...
+&lt;!-- Lisää elämänkerrallisia tietoja -->
+&lt;/bio>
+&lt;/artist>&lt;/lfm>
+</pre>
+</div>
+
+<div class="slide">
+    <h1>Soittolista XML-muodossa</h1>
+    <p class="subhead">Soittolistan tiedot ovat nyt kasassa ja esitettävissä XML-muodossa:</p>
+<pre>          
+&lt;?xml version="1.0" ?>
+&lt;playlist>
+&lt;title>Mondo Cane :: Mondo Cane @ Salsomaggiore, 2007/05/26&lt;/title>
+&lt;description>From last.fm: Mondo Cane is an upcoming album by Mike Patton. 
+It will be cover versions of 1950s and 1960s Italian pop music, performed by 
+Mike Patton with an orchestra of about 65 people. The album was originally 
+planned for release in summer 2008, but was first pushed back to 
+&amp;quot;early '09&amp;quot; and then to November 2009.
+&lt;/description>
+&lt;image href="http://userserve-ak.last.fm/serve/126/2167334.jpg"/>
+&lt;itemlist>
+&lt;item id="4676EDED9FE35AD5">
+&lt;searchterm>Ore D'Amore&lt;/searchterm>
+&lt;/item>
+&lt;!-- Loput soittolistan alkiot -->
+&lt;/itemlist>    
+&lt;/playlist>    
+</pre>
+</div>
+
+<div class="slide">
+    <h1>YouTube-videokooste</h1>
+<p class="subhead">Koostetaan lopuksi videokoosteen toteuttava HTML/Javascript/Ajax-survos (parempi vaihtoehto: 
+    yleiskäyttöinen koostesoitin ja JSON-muotoiset videolistat):</p>
+<pre>
+&lt;script type="text/javascript">
+function LoadVideoBar() {
+var videoBar;
+
+var options = {
+largeResultSet : !true,
+horizontal : true,
+autoExecuteList : {
+cycleTime : GSvideoBar.CYCLE_TIME_MEDIUM,
+cycleMode : GSvideoBar.CYCLE_MODE_LINEAR,
+executeList : [" Mondo Cane :: Mondo Cane @ Salsomaggiore, 2007/05/26", ]
+}
+}
+videoBar = new GSvideoBar( document.getElementById("videoBar-default"),
+                       document.getElementById( "player"), 
+                       options);
+
+options = {
+largeResultSet : !true,
+horizontal : true,
+master : videoBar,
+autoExecuteList : {
+cycleTime : GSvideoBar.CYCLE_TIME_MEDIUM,
+cycleMode : GSvideoBar.CYCLE_MODE_LINEAR,
+executeList : ["Ore D'Amore", ]
+}
+}
+new GSvideoBar( document.getElementById("videoBar-4676EDED9FE35AD5"),
+            document.getElementById( "player"), 
+            options);
+// Loput videot
+&lt;/script>
+</pre>
+</div>
+
+<div class="slide intermission">
+  <h1>Koostepalvelut ja informaation visualisointi</h1>
+  <p>Koostepalvelut esittelevät nykyaikaisen tavan toteuttaa informaation visualisointia</p>
+</div>
+
+<div class="slide">
+    <h1>Informaation visuaalisointi: periaatteet</h1>
+    <p class="subhead">Koostepalveluiden kehittämistä voidaan lähestyä informaation visualisoinnin periaattein:</p>
+       <ul class="incremental">
+       <li>Historoitsija Alfred Crosby 
+           (<a href="http://books.google.fi/books?id=QDjto8j0PE4C&amp;source=gbs_summary_s&amp;cad=0">1997</a>): visualisointi on mittauksen 
+           ohella tärkein nykyaikaisen tieteen räjähdysmäisen kehityksen tekijä</li> 
+       <li>Informaation visualisoinissa yleisesti on tavoitteena luoda tarkastelijalle 
+           ilmaisuvoimainen yleisnäkymä tarkasteltavaan informaatiokokonaisuuteen 
+           (<a href="http://www.infovis-wiki.net/index.php/Ware,_C.:_Information_Visualization_-_Perception_for_Design,_Morgan_Kaufmann,_2004">Ware, 2004</a>).</li> 
+       <li>Vuorovaikutteisuuden merkitys on suuri: "interaction is particularly important in InfoVis: [...] 
+           Interaction allows the user to implicitly form mental models of the correlations and relationships 
+           in the data, through recognition of patterns, marking or focusing in on those patterns, 
+           forming mental hypotheses and testing them, and so on."
+           (<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.10.1078">Kosara, Hauser ja Gresh, 2003</a>)
+       </li>
+    </ul>
+    <div class="incremental">
+    <p>Esimerkkejä informaation visualisoinnista esittelevät 
+        <a href="http://www.visualcomplexity.com/vc/">visual complexity</a>, 
+        <a href="http://mbostock.github.com/d3/">d3.js</a>,              
+        <a href="http://sigmajs.org/">Sigma.js</a> ja
+        <a href="http://lissu.tampere.fi/">Lissu Liikenteenseuranta</a>.
+    </p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1>Informaation visualisointi: prosessi</h1>
+    <p>
+        <img src="media/informaation-visualisointiprosessi.png" alt="Periaatekuva informaation visualisointiprosessista"/>
+    </p>
+    <p>Kuvalähde: (Card ja muut, 1999; Miksch, 2005)</p>
+</div>
+
+<div class="slide intermission">
+    <h1>Lopuksi</h1>
+    <p>On yhteenvedon aika</p>
+</div>
+      
+<div class="slide">
+    <h1>Lopuksi</h1>
+    <p class="subhead">Ajatuksia koostepalveluista:</p>
+    <ul class="incremental">
+      <li>Koostepalveluiden parasta antia on niiden esittelemä toimintamalli tietosisällön, toimintalogiikan ja käyttöliittymien automatisoidusta 
+        koostamisesta
+      </li>
+      <li>
+        Teoreettisesta hypertekstistä kiinnostuneet voivat vetää yhteyksiä koostepalveluiden ja Xanadu-kehittäjä Nelsonin <a href="https://www.princeton.edu/~achaney/tmve/wiki100k/docs/Transclusion.html">transclusion-käsitteen</a> välille.
+      </li>
+      <li>
+        Koostepalvelut esittelevät tukun virtaviivaisia keinoja erilaisten informaation visualisointiratkaisujen toteuttamiseen käytännössä. 
+      </li>
+  </ul>
+  <div class="incremental">
+  <p>Arkirealismia: suuri osa (valtaosa?) Web-sisältöjen jakelijoista ei halua tukea palvelunsa sisällön helppoa uudelleenkäyttöä. Pelkona on, että palvelun käyttäjät menevät sisältöjen mukana ja vievät mainostulot mennessään.</p>
+  <p> => Oma Data (vrt. <a href="http://bit.ly/avoindata_tty">Antti Poikolan vierailuluento</a>).</p>
+  </div>
+ </div>  
+</body>
+</html>
