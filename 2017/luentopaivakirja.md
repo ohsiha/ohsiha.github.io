@@ -15,7 +15,7 @@ Tulossa:
 
 ## Luentoviikko 4.3 (viikko 12): Koostepalvelut
 
-Esitys hypertekstinä ja pelkistettynä versiona.
+[Esitys](luento/43/esitys.html)
 
 Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus.
 
