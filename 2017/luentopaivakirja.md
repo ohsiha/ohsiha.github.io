@@ -17,7 +17,8 @@ Tulossa:
 
 [Esitys](luento/43/esitys.html)
 
-Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus.
+Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus. 
+Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut.fi/~huhtis/esitys/2014/03-edutech-python-data/#/)), Highcharts ja D3.js.
 
 ## Luentoviikko 4.2 (viikko 11): 
 
