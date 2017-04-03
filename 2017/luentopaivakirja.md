@@ -12,6 +12,10 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 <!-- * perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon)  -->
 
+## Luentoviikko 4.5 (viikko 14) Käytön seuranta
+
+Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Lean startup. Kontekstin aistiminen. 
+
 ## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
 
 Maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto):
@@ -20,7 +24,7 @@ Keskiviikkona ei Koodiklinikkaa.
 
 ## Luentoviikko 4.3 (viikko 12): Koostepalvelut
 
-[Esitys](luento/43/esitys.html)
+[Esitys](luento/43/esitys.html) hypertekstinä.
 
 Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus.
 Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut.fi/~huhtis/esitys/2014/03-edutech-python-data/#/)), Highcharts ja D3.js.
@@ -34,7 +38,6 @@ Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut
 Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esitteli Smart University Design Labin ja kello 15.10 Mikael Lagerbom demosi Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla esittelyssä Django.
 
 ## Tenttiviikko
-
 
 ## Luentoviikko 3.7 (viikko 8) Sisällönhallinta- ja julkaisujärjestelmät
 
