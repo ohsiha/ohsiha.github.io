@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+         <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <title>MATHM-81000 Ohjelmallinen sisällönhallinta :: Luentoviikko 4.3</title>
+          <meta name="copyright" content="Esitys Jukka Huhtamäki. Käytössä HTML Slidy." />
+          <meta name="font-size-adjustment" content="1" />
+          <link rel="stylesheet" type="text/css" media="print" href="../Slidy/print.css" />
+          <link rel="stylesheet" href="../Slidy2/styles/slidy.css" type="text/css"
+      media="screen, projection" />
+
+<!--    <link rel="stylesheet" href="../Slidy2/styles/w3c-blue.css" type="text/css"
+      media="screen, projection" /> -->
+    <link rel="stylesheet" href="../Slidy2/styles/iislab.css" type="text/css"
+      media="screen, projection" />
+    <script src="../Slidy2/scripts/slidy.js" type="text/javascript"></script><style type="text/css">
+  .label {
+    display: block;
+    width: 30ex;
+    float: left;
+  }
+</style>
+
+       <!-- start Mixpanel -->
+<!--    <script type="text/javascript">
+    //<![CDATA[
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+   g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+   mixpanel.init("d5293bf02815fd090b6340416496ef8a");</script> -->
+   <!-- end Mixpanel -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!--
+    <script type="text/javascript">
+     $(document).ready(function () {
+     mixpanel.track('Open ' + document.title);
+   });
+    //]]>
+     </script>   -->
+</head>
+
+<body>
+  <div class="background">
+    <div class="header"></div>
+  </div>
+
+<div class="slide cover">
+  <h1><a href="https://ohsiha.github.io/2017/luentopaivakirja">Ohjelmallinen sisällönhallinta, kevät 2017</a></h1>
+  <p>Luentoviikko 4.5. Käytön seuranta</p>
+  <p>Jukka Huhtamäki</p>
+  <div style="margin-top: 15ex; text-align: right;">
+  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fi/maps?f=q&amp;source=embed&amp;hl=fi&amp;geocode=&amp;q=Korkeakoulunkatu,+33720+Tampere&amp;sll=61.520193,23.637924&amp;sspn=0.015635,0.038581&amp;ie=UTF8&amp;hq=&amp;hnear=Korkeakoulunkatu,+33720+Tampere&amp;ll=61.449541,23.858825&amp;spn=0.007835,0.01929&amp;z=14&amp;layer=c&amp;cbll=61.449547,23.857318&amp;panoid=OwGaoDYUhV02w8bjEMPcew&amp;cbp=12,295.86,,0,0&amp;output=svembed"></iframe><br /></div>
+  </div>
+</div>
+
+<div class="slide">
+    <h1>Teema 1: Käytön seuranta</h1>
+    <p class="subhead">Muutama maininta esityksestä:</p>
+    <ul>
+        <li>Esityksen käytön tilastointi tapahtuu <a href='http://www.google.com/analytics/'>Google Analytics</a> -palvelulla,
+            joka noudattaa Googlen yleisiä <a href="http://www.google.com/intl/fi/privacypolicy.html">yksityisyyden suojan</a>
+            <a href="http://www.google.fi/intl/fi/privacypolicy.html#information">käytäntöjä</a>.
+        </li>
+        <li>Esitys on moneen kertaan muokattu versio ITK 2009 -seminaarin julkaisusta
+            <a href="http://matriisi.ee.tut.fi/~huhtis/esitys/2009/itk/opetuksenkoelaboratorio/esitys.php">Näin luon elävän verkko-opetuksen koelaboratorion</a>.
+        </li>
+    </ul>
+</div>
+
+<div class="slide">
+  <h1>Vastuuvapauslauseke - Disclaimer</h1>
+  <p>
+    Lean Startup -menetelmä (ks. esimerkiksi
+    <a href="http://www.slideshare.net/jukkahuhtamaki/lean-startup-lyhyt-johdanto">Lean Startup - lyhyt johdanto</a>)
+    kannustaa mittaamaan ainoastaan olennaisia asioita.
+    Näinhän se on, turhat tai turhamaiset mittarit (vanity metrics) eivät (välttämättä)
+    auta ohjaamaan palvelukehitystä oikeaan suuntaan.
+  </p>
+  <p>
+    Yleisesti on kuitenkin niin, että jonkinlaisia mittauksia on syytä tehdä joka
+    tapauksessa. Jos kehittäjällä ei ole mitään tietoa käyttäjien toiminnasta,
+    päätöksiä tehdään usein erilaisten oletusten varassa.
+  </p>
+</div>
+
+
+<div class="slide intermission">
+    <h1>Osa 1: Automatisoitu käytön seuranta</h1>
+    <p>Osa 1: Automatisoitu käytön seuranta</p>
+</div>
+
+<div class="slide">
+<h1>Taustaa: ohjaus edellyttää tietoa</h1>
+<p class="subhead">Tavoitteena arjen <dfn>toimintatutkimus</dfn> (action research) elävien koelaboratorioiden (Living Labs, ks.
+  <a href="http://inhiit.blogspot.com/2008/02/living-labs-kriittist-arviointia.html">Mäntylä, 2008</a>) hengessä. Taustaa</p>
+  <ul>
+    <li>Historoitsija Alfred Crosby (1997): mittaus ja visualisointi mahdollistivat
+      nykyaikaisen tieteen räjähdysmäisen kehityksen.</li>
+    <li>Verkkopalvelun käytön tai muun ilmiön ymmärtäminen ja etenkin ohjaaminen
+      edellyttää ilmiön tekemistä näkyväksi.</li>
+    <li><a href="http://www.infovis-wiki.net/index.php/Ware,_C.:_Information_Visualization_-_Perception_for_Design,_Morgan_Kaufmann,_2004">Ware (2004)</a>:
+      <dfn>Informaation visualisoinnissa</dfn> (information visualisation)
+      tavoitteena on ilmaisuvoimaisten näkymien tuottaminen ongelmanratkaisun
+      ja päätöksenteon tueksi.</li>
+    <li>Nyt tavoitteena on käyttäjien toiminnan näkyväksi tekeminen ja esimerkiksi erilaisten
+        <dfn>väliintulojen</dfn> (interventio) vaikutusten toteaminen
+        erilaisissa informaatiojärjestelmissä.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h1>Taustaa: Web-hypertekstin lainalaisuuksia</h1>
+  <p class="subhead">Yksinkertaiset perusperiaatteet ovat sekä Webin heikkous että vahvuus.</p>
+  <p>Hyperlinkit ovat yksisuuntaisia:</p>
+  <pre>&lt;a href=&quot;http://tut.fi/&quot;>TTY&lt;/a></pre>
+  <p>Mikään yksittäinen taho ei hallitse Webiä kokonaisuutena:
+      edes hakukoneet eivät tavoita kaikkia Web-sivuja.</p>
+  <p><strong>Seuraus</strong>: kun julkaiset sivun Webiin, sinulla ei
+      oletusarvoisesti ole mahdollisuutta tietää
+      kuka sivujasi lukee tai esimerkiksi tietää ketkä sivuihisi viittaavat.
+  </p>
+  <p>Esimerkiksi blogijärjestelmissä ongelma on pyritty ratkaisemaan
+    <dfn>takaisinviittausmekanismilla</dfn>
+      (Linkback: RefBack, Trackback, Pingback).</p>
+  <p>Organisaatioiden intraneteissä ja muissa suljetuissa järjestelmissä tilanne
+    on toki hallitumpi.</p>
+</div>
+
+<div class="slide intermission">
+    <h1>Välikysymys</h1>
+    <p>Miten käytön seuranta toimii?</p>
+</div>
+
+<div class="slide">
+    <h1>Tekniikkaa: HTTP, palvelinohjelmointi ja Javascript</h1>
+    <p class="subhead">
+        Webin tekninen tomintaperiaate tiivistettynä:
+    </p>
+    <ul>
+        <li>Web on asiakas-palvelin -malliin perustuva hypertekstijärjestelmä.</li>
+        <li>Web-selain ja palvelin kommunikoivat HTTP-protokollalla.</li>
+    </ul>
+    <p>Selain liittää tekemiensä HTTP-pyyntöjen mukaan tietoa selaimesta ja käyttäjästä.
+      Lisää tietoa voidaan kerätä javascriptaamalla. Esimerkiksi seuraavat tiedot
+      voidaan selvittää:
+    </p>
+    <p>
+        Saavuit Web-osoitteesta &lt;Ei määritelty&gt;.
+        IP-osoitteesi on 130.230.133.52, joten lienet siis kaupungissa nimeltä
+        <!---->&lt;!-- Geocoding failed--&gt;&lt;ei löytynyt&gt;.        Puhut
+        &lt;tuntematon kielikoodi&gt; (en-GB).
+
+        <script type="text/javascript" src="esimerkki/selain.js"></script>
+        <script type="text/javascript">
+        var browser = navigator.appCodeName;
+        var screenW = 640, screenH = 480;
+        if (parseInt(navigator.appVersion)>3) {
+            screenW = screen.width;
+            screenH = screen.height;
+        }
+        else if (navigator.appName == "Netscape") {
+            if (parseInt(navigator.appVersion)==3) {
+                if (navigator.javaEnabled()) {
+                    var jToolkit = java.awt.Toolkit.getDefaultToolkit();
+                    var jScreenSize = jToolkit.getScreenSize();
+                    screenW = jScreenSize.width;
+                    screenH = jScreenSize.height;
+                }
+            }
+        }
+        document.write( "Käytät " +  BrowserDetect.browser + "-selainta. ");
+        document.write('Ruutusi koko on ' + screenW + 'x' + screenH + '. Luet dokumenttia nimeltä "' + document.title + '".');
+        </script>
+    </p>
+    <p>
+        Yleistäen voidaan viitata <dfn>käyttökontekstiin</dfn>. Käyttäjästä näillä keinoin
+        saadaan selville lähinnä äidinkieli ja sekään tieto ei ole luotettava.
+    </p>
+</div>
+
+<div class="slide intermission">
+    <h1>Mielenkiintoista, mutta vaikuttaa työläältä. Vaihtoehtoja?</h1>
+    <p>Kohti käytön seurantaa - (valitettavasti) kolmannen osapuolen välineiden avustuksella</p>
+</div>
+
+<div class="slide">
+    <h1>Oikopolku: valmiit ratkaisut</h1>
+    <p>Web-ohjelmoinnin perustaidot hallitseva pääsee eteenpäin edellä esitellyillä
+      ohjelmointiin perustuvilla keinoilla.</p>
+    <p class="subhead">Toinen vaihtoehto on ottaa käyttöön valmis käytönseurantaratkaisu.
+      Vaihtoehtoja:</p>
+      <ul>
+        <li><a href="http://piwik.org/">Google Analytics</a></li>
+        <li><a href="https://mixpanel.com/">Mixpanel</a></li>
+        <li><a href="http://getclicky.com/">Clicky Web Analytics</a></li>
+        <li><a href="http://piwik.org/">Piwik</a></li>
+        <li><a href="http://web.analytics.yahoo.com/">Yahoo! Web Analytics</a></li>
+      </ul>
+      <p>Kotimainen <a href="http://www.snoobi.fi/snoobi-analytics/">Snoobi</a>
+        on esimerkki maksullisesta käytönseurantapalvelusta.</p>
+      <p><strong>Tosiasia</strong>: esimerkiksi Google särähtää monen
+        käyttäjän silmään eikä siksi ole täysin ongelmavapaa ratkaisu.</p>
+</div>
+
+<div class="slide">
+  <h1>Tapaus Hypermedian ohjelmointi</h1>
+  <p class="subhead">Hypermedian ohjelmointia järjestettiin opetusperiodeilla 4 ja 5:</p>
+  <ul>
+      <li>Luennot, harjoitukset ja harjoitustyö.</li>
+      <li>Käytössä aikaisemmin Drupaliin perustuva yhteisö/sisällönhallintajärjestelmä; tätä nykyä käytössä on TTY-Piiri.</li>
+      <li>Opiskelijat tekevät harjoitustyön, jonka ominaisuuksien toteuttamisesta jaetaan pisteitä harjoituksissa.</li>
+      <li>Kuhunkin harjoituskertaan liittyy esitehtävä.</li>
+      <li>Käytön seuranta Google Analyticsilla. </li>
+  </ul>
+ </div>
+
+<div class="slide">
+  <h1>Hypermedian ohjelmointi 2009: Mitä opiskelijat tekevät ja koska?</h1>
+  <p><a href="media/vierailut.png"><img src="media/hm-ohj2009-vierailut.png" width="800" alt="Kaaviokuva vierailuista Hypermedian ohjelmoinnin verkkoympäristössä, harjoitusten tehtävänannoissa ja luentomateriaalissa"/></a></p>
+  <p>
+    Hypermedian ohjelmoinnin kevään 2009 toteutuskerran prujun lukukerrat
+    (tehtävä: etsi tentti): <br/>
+    <a href="media/hm-ohj2009-pruju.png"><img src="media/hm-ohj2009-pruju.png" width="800" alt="Hypermedian ohjelmoinnin kevään 2009 toteutuskerran prujun lukukerrat"/></a>
+  </p>
+
+</div>
+
+<div class="slide">
+    <h1>Tapaus Vaikuttamistaidot.fi: Missä avoin oppimateriaalini on käytössä?</h1>
+    <p class="subhead"><a href="http://vaikuttamistaidot.fi/">Vaikuttamistaidot.fi</a> on nuorille suunnattu vuorovaikutteinen oppimateriaali vaikuttamisen taitojen
+        opiskelun tueksi. Palveluun saavutaan seuraavasti:</p>
+    <p>
+      <img src="media/vaikuttamistaidot.png" width="800" alt="Käyttäjien reitit Vaikuttamistaidot.fi-palveluun"/>
+    </p>
+</div>
+
+<div class="slide">
+    <h1>Testissä Google Analytics</h1>
+    <p>Google Analytics on kolmannen osapuolen tarjoamien vaihtoehtojen aatelia, joten sen
+        läpikäynti antaa kattavan kuvan käytön seurannan mahdollisuuksista.</p>
+    <p class="subhead">Pureudutaan seuraavaksi Google Analytics -palvelun toimintaan:</p>
+    <ol>
+        <li>Tunnuksen tekeminen.</li>
+        <li>Uuden seurantakohteen perustaminen.</li>
+        <li>Seurannan käyttöönotto.</li>
+        <li>Käytön analysointi: näkymät, aikajana ja muut yksityiskohdat.</li>
+        <li>Käyttöehdot.</li>
+        <li>Rajoitteet.</li>
+    </ol>
+    <p><strong>Tosiasia</strong>: Google särähtää monen käyttäjän silmään eikä siksi ole täysin ongelmavapaa ratkaisu.</p>
+</div>
+
+<div class="slide">
+    <h1>Käyttötapauksia</h1>
+    <p class="subhead">Kokeillaan löydämmekö Analytics-palvelun tuella vastauksia
+        joihinkin yleisesti askarruttaviin kysymyksiin:</p>
+    <ul>
+        <li>Miten aktiivista sivustoni käyttö on?</li>
+        <li>Mitkä sivut ovat suosituimpia?</li>
+        <li>Mihin sivuille käyttäjät yleisimmin sivustolle saapuvat? Entä mistä poistuvat?</li>
+        <li>Mitä tietoa käyttäjät hakevat sivustolta?</li>
+        <li>Kokevatko käyttäjät sivustollani systemaattisia käytettävyysongelmia?</li>
+        <li>Onko sivustoni linkitetty joillekin muille sivustoille?</li>
+    </ul>
+    <p>Mitä sinä haluaisit tietää palvelusi käyttäjistä ja heidän toiminnastaan sivustoillasi tai verkkopalvelussasi?</p>
+</div>
+
+<div class="slide">
+  <h1>Neljä keskeistä kysymystä</h1>
+  <p>
+    Verkkopalveluiden (mukaan lukien sosiaalisen median) käytön analytiikan tuella pyritään
+    vastaamaan neljään keskeiseen kysymykseen (Croll &amp; Sean, 2009;
+    <a href="http://docplayer.fi/1879235-Teemo-tebest-verkkopalvelun-kayton-seuranta-ja-seurantatiedon-visualisointi-diplomityo.html">Tebest, 2010</a>):</p>
+    <ol>
+        <li>Mitä käyttäjät tekevät verkkopalvelussa?</li>
+        <li>Miten käyttäjät toimivat verkkopalvelussa?</li>
+        <li>Miksi käyttäjät toimivat verkkopalvelussa?</li>
+        <li>Onko käyttäjien mahdollista tehdä verkkopalvelussa se mitä haluavat?</li>
+    </ul>
+</div>
+
+<div class="slide">
+  <h1>Pohdintaa</h1>
+  <p class="subhead">Pohdintaa käytön seurannasta:</p>
+  <ul class="incremental">
+      <li>Google Analytics -palvelu voidaan ottaa käyttöön usein melko suoraviivaisesti, vrt.
+          <a href="http://wordpress.org/extend/plugins/google-analytics-for-wordpress/">WordPress</a>,
+          <a href="http://help.ning.com/cgi-bin/ning.cfg/php/enduser/std_adp.php?p_faqid=3003">Ning.com</a>, <a href="http://drupal.org/project/google_analytics">Drupal</a>.</li>
+      <li>Integroitujen ratkaisujen käyttöönotto on työläämpää, mutta yksityisyys on jo taatumpi.</li>
+      <li>Käytännön haaste: seurataanko kaikkea toimintaa kerralla vai ryhmitelläänkö kokonaisuuksiin (vrt. Hypermedian ohjelmointi)?</li>
+      <li>Käyttäjä voi halutessaan estää Google Analytics -seurannan.</li>
+      <li>Seuranta voi olla tarvittaessa hyvinkin yksityiskohtaista, vrt. esimerkiksi
+          <a href="http://www.clickdensity.com/">clickdensity</a>
+          tai <a href="http://www.labsmedia.com/clickheat/">ClickHeat</a>.
+      </li>
+  </ul>
+  <div class="incremental">
+  <p>Sisäänrakennettujen ratkaisujen <strong>verraton etu</strong>: seuranta toimii aina
+      eikä aiheuta käyttäjässä (turhaa) huolta.
+  </p>
+  </div>
+</div>
+
+<div class="slide intermission">
+    <h1>Kohti eläviä koelaboratorioita</h1>
+    <p>
+        Pohditaan vielä tovi eläviä koelaboratorioita ja hahmotellaan suuntaa
+        kohti sosiaalisten verkostojen visualisointia käytön seurannan välineenä.
+    </p>
+</div>
+
+<div class="slide">
+  <h1>Kohti eläviä (verkko)koelaboratorioita</h1>
+
+  <p class="subhead">Käytön seuranta esittelee olennaisen osan elävää verkkokoelaboratoriota:</p>
+  <ul>
+      <li>verkkopalvelun kehittäjä on <dfn>interventionisti</dfn> (Järvinen ja Järvinen, 2004), joka aktiivisesti
+          tekee väliintuloja eli interventioita...
+      </li>
+      <li>...ja toteaa niiden vaikutuksen käytän seurannan tuella.</li>
+  </ul>
+  <p>Eräs laajempi asiayhteys moiselle toiminnalle on Living Labs -periaate (vrt. <a href="http://ec.europa.eu/information_society/istevent/2006/cf/conference-detail.cfm?id=663#cmnt4781">De Lama, 2006</a>;
+  <a href="http://inhiit.blogspot.com/2008/02/living-labs-kriittist-arviointia.html">Mäntylä, 2008</a>).</p>
+
+  <p>Käytön seuranta on suoraan yhteydessä myös innovaatiotoiminnan ytimeen verkkopalveluiden tapauksessa:
+      käyttöä analysoimalla on mahdollista kartoittaa käyttäjien/kuluttajien tarpeita joihin verkkopalvelulla
+      vastataan ja siten tuotetaan lisäarvoa  (value creation) kuluttajille. </p>
+  <p></p>
+</div>
+<div class="slide intermission">
+    <h1>Suuntaa tulevalle</h1>
+    <p>Tavoitteena sosiaalisten verkostojen visualisointi</p>
+</div>
+
+<div class="slide">
+  <h1>Sosiaalisten verkostojen visualisointi</h1>
+  <ul>
+
+      <li>Sosiaalisten verkostojen visualisointi on erityisen läheisessä yhteydessä käytön seurantaan:
+          &quot;Images of social networks have provided investigators with new insights about network structures
+          and have helped them to communicate those insights to others&quot;
+          (<a href="http://www.cmu.edu/joss/content/articles/volume1/Freeman.html">Freeman, 2000</a>)
+      </li>
+  </ul>
+  <p style="float: left; margin-top: 0ex;"><a href="http://www.stanford.edu/group/sonia/examples/McFarlaClass.html"><img height="400" src="http://www.stanford.edu/group/sonia/images/cls33_10_16_96.gif" alt="SoNIAlla toteutettu esimerkkianimaatio"/></a></p>
+  <p>Kuva: <a href="http://www.stanford.edu/group/sonia/">SoNIA</a> (Social Network Image Animator)</p>
+
+  <p>Lisää välineitä:
+      <a href="http://gephi.org/">Gephi</a>,
+      <a href="http://nodexl.codeplex.com/">NodeXL</a>,
+      <a href="http://www.commetrix.de/">Commetrix</a> (vrt. <a href="http://www.commetrix.de/IRIS">tapaus IRIS</a>),
+      <a href="http://jheer.org/vizster/">Vizster</a>,
+      <a href="http://pajek.imfm.si/">Pajek</a>.
+
+  </p>
+</div>
+
+<div class="slide">
+    <h1>Esimerkki: ryhmätyöt wikissä</h1>
+    <p>Salonen ja Lähteinen (2009) tuovat näkyviin ryhmätyön tuloksena syntyneiden wikisivujen viittausrakenteen:</p>
+    <p><img src="media/wiki-verkosto-1-piirrelty.png" width="800" alt="Graafi ryhmätöinä tuotettujen wikisivujen verkostorakenteesta"/></p>
+</div>
+
+<div class="slide">
+    <h1>Tavoite: Vuorovaikutteiset raportit &amp; sosiaalisen median analytiikka</h1>
+    <p>Verkkopalvelujen käytön analyysin ohella alati tärkeämmäksi keinoksi käyttäjäymmärryksen kehittämisessä nousee sosiaalisen median analytiikka.</p>
+    <p>
+    Esimerkiksi Twitter on avoimien rajapintojensa ja laajan suosionsa ansiosta kiinnostava kohde analyysivälineiden kehittäjille. Ärsykkeitä
+    analytiikkaideointiin löydät esimerkiksi seuraavista palveluista:</p>
+    <ul>
+      <li><a href="http://mentionmapp.com/">mentionmap</a></li>
+      <li><a href="http://twitalyzer.com/">Twitalyzer</a></li>
+      <li><a href="http://klout.com/">Klout</a></li>
+    </ul>
+    <p>Myös
+    Facebook-analyysi onnistuu esimerkiksi <a href="http://buzz.meltwater.com/">Meltwater Buzzilla</a> ja muilla nykyaikaisilla välineillä - tai suoraan <a href="http://developers.facebook.com/docs/reference/api/">Graph API:n</a> tuella.</p>
+    <p>Parhaimmillaan verkkopalveluanalytiikka yhdistyy sosiaalisen median analytiikkaan yhden luukun periaatteella niin, että analysoija
+        pääsee perehtymään käyttäjin toimintaan vuorovaikutteisten visuaalisten raporttien välityksellä.</p>
+
+
+
+<!--<p>
+        Hypermedialaboratorio kehittää menetelmiä ja keinoja nykyistä vuorovaikutteisempien ja ilmaisuvoimaisempien
+        raporttien automatisoituun tuottamiseen seurannan ja ohjaamisen tueksi. Erittäin karkea prototyyppi (toteutettu
+        yhteistyössä <a href="http://matwww.ee.tut.fi/hypermedia/fi/henkilosto/henkilokortit/thumas-miilumaki">Thumas Miilumäen</a> kanssa):
+    </p>
+    <p>
+      <img src="media/yhteisoraportti.png" alt="Karkea prototyyppi vuorovaikutteisesta yhteisön toimintaa kuvaavasta raportista "/>
+    </p>-->
+</div>
+
+
+<div class="slide">
+  <h1>Lopuksi</h1>
+  <p class="subhead">Yhteenveto ja johtopäätökset:</p>
+  <ul class="incremental">
+      <li>Yksityisyyden suojan varmistaminen koetaan joskus kehittämistä tärkeämmäksi - aiheestakin?</li>
+      <li>
+          Käytön seuranta voidaan ottaa käyttöön vaikka heti, käyttäjien sosiaalisen verkoston näkyväksi tekeminen on vaikeampaa.
+      </li>
+      <li>
+          Jälkimmäinenkin onnistuu toki jo nyt, mutta edellyttää välineiden käytön opettelua ja datan koostamista käsin.
+      </li>
+      <li>
+          Ennakkoluulojen ja asenteiden taittaminen on tietenkin vaikeampaa, joskus syystäkin.
+      </li>
+      <li>
+          Huomionarvoista on, että myös reaalimaailman tilojen käytön mittarit kehittyvät alati (vrt. <a href="http://www.otosservice.net/">Otos</a>).
+      </li>
+  </ul>
+  <div class="incremental">
+  <p>
+      Vaikka käytön seurannan voidaankin todeta olevan tämä kaikki on <q><a href="http://www.youtube.com/watch?v=C4NXaOdClkE">ihan orwellin touhuu</a></q>,
+      ovat sen lisäarvot verkkopalvelun kehittämisen tukena kuitenkin selvästi mahdollisia ongelmia suurempia.
+  </p>
+  </div>
+</div>
+
+</body>
+</html>
