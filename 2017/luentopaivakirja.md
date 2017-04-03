@@ -14,7 +14,7 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 ## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
 
-* Maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto):
+Maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto):
 [Data journalismin välineenä](http://www.tut.fi/fi/tietoa-yliopistosta/uutiset-ja-tapahtumat/tapahtumat/ansioitunut-tekija-kertoo-data-journalismin-tyovalineena-x200590) (Teemo Tebest). [Luentomateriaali](https://github.com/teelmo/presentations/tree/master/2017/2017-03-27-Tampereen%20Yliopisto) Githubissa.
 Keskiviikkona ei Koodiklinikkaa.
 
@@ -27,7 +27,7 @@ Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut
 
 ## Luentoviikko 4.2 (viikko 11) APIOps-vierailu
 
-* [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/) -vierailu maanantaina. 
+[APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/) -vierailu maanantaina.
 
 ## Luentoviikko 4.1 (viikko 10) SUDL-vierailuluento ja teknologiademoja
 

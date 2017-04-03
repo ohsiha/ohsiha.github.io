@@ -1,4 +1,12 @@
-## TODO
+Tämä on Tampereen teknillisen yliopiston Ohjelmallinen sisällönhallinta -opintojakson kotisivu.
+
+Nyt käynnissä: [Kevään 2017 toteutuskerta](https://ohsiha.github.io/2017/)
+
+Aihepiiriin liittyviä twiittejä: #ohsiha
+
+Lisätietoja antaa [Jukka Huhtamäki](http://www.tut.fi/fi/henkilokortti/index.htm?id=8883).
+
+<!-- ## TODO
 
 - Test https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
@@ -40,3 +48,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ -->
