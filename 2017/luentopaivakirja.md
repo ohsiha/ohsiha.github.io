@@ -14,7 +14,9 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 ## Luentoviikko 4.5 (viikko 14) Käytön seuranta
 
-Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Lean startup. Kontekstin aistiminen. 
+[Esitys](luento/45/esitys.html) hypertekstinä.
+
+Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Kontekstin aistiminen. Lean startup. Koodiklinikalla esimerkkejä käytön seurannasta.
 
 ## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
 
