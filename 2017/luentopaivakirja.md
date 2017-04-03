@@ -16,6 +16,7 @@ Tulossa:
 
 * maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto): Data, analytiikka ja journalismi (Teemo Tebest)
 
+<<<<<<< HEAD
 ## Luentoviikko 4.3 (viikko 12) Koostepalvelut
 
 
@@ -25,6 +26,18 @@ Tulossa:
 * [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/) -vierailu maanantaina.
 
 ## Luentoviikko 4.1 (viikko 10) SUDL-vierailuluento ja teknologiademoja
+=======
+## Luentoviikko 4.3 (viikko 12): Koostepalvelut
+
+[Esitys](luento/43/esitys.html)
+
+Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus. 
+Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut.fi/~huhtis/esitys/2014/03-edutech-python-data/#/)), Highcharts ja D3.js.
+
+## Luentoviikko 4.2 (viikko 11): 
+
+## Luentoviikko 4.1 (viikko 10) SUDL ja teknologiademoja
+>>>>>>> origin/master
 
 Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esitteli Smart University Design Labin ja kello 15.10 Mikael Lagerbom demosi Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla esittelyssä Django.
 
