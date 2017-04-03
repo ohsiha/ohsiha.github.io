@@ -5,26 +5,37 @@ title: Luentopäiväkirja / OHSIHA 2017
 
 Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentopäiväkirja. Toteutus noudattelee [vuoden 2016 toteutuskertaa](https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/luentop%C3%A4iv%C3%A4kirja). Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetään jatkuvasti.
 
-# Luentopäiväkirja 
+# Luentopäiväkirja
 
 Tulossa:
 
 <!-- * perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon)  -->
-* maanantaina 13. maaliskuuta kello 14: [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/)
+
+
+## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
+
 * maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto): Data, analytiikka ja journalismi (Teemo Tebest)
 
-## Luentoviikko 4.1 (viikko 10) SUDL ja teknologiademoja
+## Luentoviikko 4.3 (viikko 12) Koostepalvelut
 
-Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esittelee Smart University Design Labin ja kello 15.10 Mikael Lagerbom demoaa Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla on esittelyssä Django.
+
+
+## Luentoviikko 4.2 (viikko 11) APIOps-vierailu
+
+* [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/) -vierailu maanantaina.
+
+## Luentoviikko 4.1 (viikko 10) SUDL-vierailuluento ja teknologiademoja
+
+Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esitteli Smart University Design Labin ja kello 15.10 Mikael Lagerbom demosi Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla esittelyssä Django.
 
 ## Luentoviikko 3.7 (viikko 8) Sisällönhallinta- ja julkaisujärjestelmät
 
 [Esitys](luento/37/esitys.pdf) PDF-muodossa.
 
 Luento käyntiin sivupohjamoottoridemolla ([markdown](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/markdown), [flask/template](https://github.com/jukkahuhtamaki/pcm-demo/blob/master/flask/templates/visualize.html))  
-Sisällönhallinta- ja julkaisujärjestelmien toiminnallisuus. 
-Data, informaatio ja sisältö. 
-Ja niin edelleen, ks. esitys. 
+Sisällönhallinta- ja julkaisujärjestelmien toiminnallisuus.
+Data, informaatio ja sisältö.
+Ja niin edelleen, ks. esitys.
 Keskustelua ja esimerkkejä [automatisoinnista](02/20/automaatio.html.
 Koodiklinikalla Jouni Veiman vetämä [Bootstrap](http://getbootstrap.com/)-demo.
 
@@ -34,20 +45,20 @@ Koodiklinikalla Jouni Veiman vetämä [Bootstrap](http://getbootstrap.com/)-demo
 
 [Harjoitustyöohje](harjoitustyo) on julkaistu.
 
-Luento käyntiin [Flask-demolla](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/flask). 
-Asiakas-palvelin -malli vs. kolmikerrosmalli, 
-verkkopalvelun keskeinen toiminnallisuus (pääsynhallinta, käyttäjän tunnistaminen, käyttöoikeuksien hallinta), 
-lomakkeet (ks. [lomake-elementit](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2012/demo/html-lomakkeet/lomake-elementit.html), 
-[ehdottava](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2014/demo/lomake/ehdottava.html)), 
-istuntojen hallinta (evästeet), 
-esimerkkejä (ks. [http-perusautentikointi](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2015/demo/verkkopalveluarkkitehtuuri/http-perusautentikointi.php), 
-[istunto](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2015/demo/verkkopalveluarkkitehtuuri/istunto.php)), 
-verkkopalvelun tietoturva, 
-verkkopalvelujen yleisiä ominaisuuksia, 
-uudelleenkäytettävyys ja verkkopalvelun toteuttaminen, 
-<!-- katsaus <a href="https://fi.wordpress.org/">Wordpress</a>-järjestelmään (ks. <a href="http://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP">asennusohje</a>, <a href="http://codex.wordpress.org/The_Loop">The Loop</a>), 
+Luento käyntiin [Flask-demolla](https://github.com/jukkahuhtamaki/pcm-demo/tree/master/flask).
+Asiakas-palvelin -malli vs. kolmikerrosmalli,
+verkkopalvelun keskeinen toiminnallisuus (pääsynhallinta, käyttäjän tunnistaminen, käyttöoikeuksien hallinta),
+lomakkeet (ks. [lomake-elementit](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2012/demo/html-lomakkeet/lomake-elementit.html),
+[ehdottava](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2014/demo/lomake/ehdottava.html)),
+istuntojen hallinta (evästeet),
+esimerkkejä (ks. [http-perusautentikointi](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2015/demo/verkkopalveluarkkitehtuuri/http-perusautentikointi.php),
+[istunto](http://matriisi.ee.tut.fi/hmopetus/ohsiha/2015/demo/verkkopalveluarkkitehtuuri/istunto.php)),
+verkkopalvelun tietoturva,
+verkkopalvelujen yleisiä ominaisuuksia,
+uudelleenkäytettävyys ja verkkopalvelun toteuttaminen,
+<!-- katsaus <a href="https://fi.wordpress.org/">Wordpress</a>-järjestelmään (ks. <a href="http://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP">asennusohje</a>, <a href="http://codex.wordpress.org/The_Loop">The Loop</a>),
  -->
-esimerkkejä verkkopalvelujen toiminnallisuudesta. 
+esimerkkejä verkkopalvelujen toiminnallisuudesta.
 Koodiklinikalla katsastetaan erilaisia Web-sovelluskehyksiä.  
 <!-- <a href="https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/blog/nodejs-demo-2522016">Node.js-demo</a>. </p>-->
 
@@ -121,14 +132,14 @@ Kolmikerrosmalli. GET vs. POST. API first. Raapijat, ryömijät ja rajapinnat es
 
 ## Luentoviikko 3.4 (viikko 5): Resurssista representaatioksi
 
-Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio. 
-Demo: twiitti resurssina (ks. [simple_read.py](https://github.com/jukkahuhtamaki/pcm-demo/blob/master/twitter-api/simple_read.py)). 
-HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus. 
+Johdatus hypermediaan (ks. [opintojaksokuvaus](http://www.tut.fi/wwwoppaat/opas2015-2016/perus/laitokset/Matematiikka/MAT-80000.html)) 90 minuutissa. URI-tunniste, resurssi, representaatio.
+Demo: twiitti resurssina (ks. [simple_read.py](https://github.com/jukkahuhtamaki/pcm-demo/blob/master/twitter-api/simple_read.py)).
+HTML, CSS ja Javascript: sisältö, esitystapa, toiminnallisuus.
 Taustaa tarkemmin: Learn [HTML &amp; CSS](https://www.codecademy.com/learn/web), [Javascript](https://www.codecademy.com/learn/javascript).
-Edistyneille: [Bootstrap](http://getbootstrap.com/). 
+Edistyneille: [Bootstrap](http://getbootstrap.com/).
 Koodiklinikalla perehdytään [Firebaseen](https://firebase.google.com/), ks. [demon kuvaus](https://github.com/piehei/ohsiha-firebase-demo).
 
-## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan 
+## Luentoviikko 3.3 (viikko 4): Käytännöt ja katsaus ohjelmallisen sisällönhallinnan nykytilaan
 
 Toteutuskerran avausluento järjestetään maanantaina 23. tammikuuta 2017 kello 14.15 salissa SJ204.
 
