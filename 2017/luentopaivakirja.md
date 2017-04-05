@@ -16,7 +16,13 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 [Esitys](luento/45/esitys.html) hypertekstinä.
 
-Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Kontekstin aistiminen. Lean startup. Koodiklinikalla esimerkkejä käytön seurannasta.
+Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Kontekstin aistiminen. Lean startup. Koodiklinikalla esimerkkejä kontekstin tunnistamisesta ja käytön seurannasta:
+<!-- <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2014/pruju/09/esitys.php#(9)">luentokalvot</a>,  -->
+[$_SERVER](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2007/demo/jakelukonteksti/http-request-details.php),
+[HTTP_REFERER](http://stackoverflow.com/questions/12369615/serverhttp-referer-missing),
+[sijainti](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2013/demo/sijainti/esimerkki.html),
+[HTML5 ja uudet mahdollisuudet](http://blog.teamtreehouse.com/exploring-javascript-device-apis)
+.
 
 ## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
 
