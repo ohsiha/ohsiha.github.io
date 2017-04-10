@@ -3,7 +3,8 @@ layout: default
 title: Luentopäiväkirja / OHSIHA 2017
 ---
 
-Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentopäiväkirja. Toteutus noudattelee [vuoden 2016 toteutuskertaa](https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/luentop%C3%A4iv%C3%A4kirja).
+Tämä on Ohjelmallisen sisällönhallinnan kevään 2017 toteutuskerran luentopäiväkirja.
+Toteutus noudattelee [vuoden 2016 toteutuskertaa](https://iislab.ee.tut.fi/piiri/ohjelmallinen-sis%C3%A4ll%C3%B6nhallinta-2016/wiki/luentop%C3%A4iv%C3%A4kirja).
 Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetään jatkuvasti.
 
 # Luentopäiväkirja
@@ -12,7 +13,9 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 <!-- * perjantaina 17. helmikuuta: [Vaali- ja Wikidatahackathon](https://ohsiha.github.io/2017/02/06/Vaali-ja-Wikidata-hackathon)  -->
 
-## Luentoviikko 4.5 (viikko 14) Käytön seuranta
+## Luentoviikko 4.6 (viikko 15): Mukautuvat järjestelmät
+
+## Luentoviikko 4.5 (viikko 14): Käytön seuranta
 
 [Esitys](luento/45/esitys.html) hypertekstinä.
 
@@ -25,7 +28,7 @@ Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Kon
 [HTML5 ja uudet mahdollisuudet](http://blog.teamtreehouse.com/exploring-javascript-device-apis),
 Wordpress .
 
-## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
+## Luentoviikko 4.4 (viikko 13): Datajournalismi-vierailuluento
 
 Maanantaina 27. maaliskuuta kello 13 (Tampereen yliopisto):
 [Data journalismin välineenä](http://www.tut.fi/fi/tietoa-yliopistosta/uutiset-ja-tapahtumat/tapahtumat/ansioitunut-tekija-kertoo-data-journalismin-tyovalineena-x200590) (Teemo Tebest). [Luentomateriaali](https://github.com/teelmo/presentations/tree/master/2017/2017-03-27-Tampereen%20Yliopisto) Githubissa.
@@ -38,17 +41,19 @@ Keskiviikkona ei Koodiklinikkaa.
 Kohti hajautettua Web-hypermediaa, yhdistetty (julkinen) data, johdanto koostepalveluihin, käsitteistä (mash-up, survos, muusaus, fuusaus), koostamisen tasot, informaation visualisointi ja koostepalvelut, eräs koostepalvelu ja sen toteutus.
 Koodiklinikalla Pandas (ks. [Datan käsittely Pythonilla](http://matriisi.ee.tut.fi/~huhtis/esitys/2014/03-edutech-python-data/#/)), Highcharts ja D3.js.
 
-## Luentoviikko 4.2 (viikko 11) APIOps-vierailu
+## Luentoviikko 4.2 (viikko 11): APIOps-vierailu
 
 [APIOps goes Tampere University of Technology](https://www.meetup.com/APIOps-Tampere/events/237342343/) -vierailu maanantaina.
 
-## Luentoviikko 4.1 (viikko 10) SUDL-vierailuluento ja teknologiademoja
+## Luentoviikko 4.1 (viikko 10): SUDL-vierailuluento ja teknologiademoja
 
 Maanantaina 6. maaliskuuta kello 14.15 Jussi Hannunen esitteli Smart University Design Labin ja kello 15.10 Mikael Lagerbom demosi Node.js-kehitystä, ks. [SUDL-vierailu ja Node.js-demo](https://ohsiha.github.io/2017/02/28/sudl-ja-nodejs.html). Koodiklinikalla esittelyssä Django.
 
 ## Tenttiviikko
 
-## Luentoviikko 3.7 (viikko 8) Sisällönhallinta- ja julkaisujärjestelmät
+Ei luentoja eikä harjoituksia
+
+## Luentoviikko 3.7 (viikko 8):  Sisällönhallinta- ja julkaisujärjestelmät
 
 [Esitys](luento/37/esitys.pdf) PDF-muodossa.
 
@@ -59,7 +64,7 @@ Ja niin edelleen, ks. esitys.
 Keskustelua ja esimerkkejä [automatisoinnista](02/20/automaatio.html.
 Koodiklinikalla Jouni Veiman vetämä [Bootstrap](http://getbootstrap.com/)-demo.
 
-## Luentoviikko 3.6 (viikko 7) Verkkopalvelun arkkitehtuuri ja yleinen toiminnallisuus
+## Luentoviikko 3.6 (viikko 7): Verkkopalvelun arkkitehtuuri ja yleinen toiminnallisuus
 
 [Esitys](luento/36/esitys.html) hypertekstinä.
 
