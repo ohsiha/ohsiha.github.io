@@ -20,7 +20,7 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 Lisätietoa:
 
 * [Overview of Recommender Systems](http://bit.ly/2ohLA02) (Stanford University)
-
+* Recommender systems, Part 1: [Introduction to approaches and algorithms](https://www.ibm.com/developerworks/library/os-recommender1/) (M. Jones, IBM)
 
 ## Luentoviikko 4.5 (viikko 14): Käytön seuranta
 
