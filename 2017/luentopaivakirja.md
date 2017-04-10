@@ -20,9 +20,10 @@ Käytön seurannan periaatteet ja toteuttaminen. Käyttödatan kerääminen. Kon
 <!-- <a href="http://matriisi.ee.tut.fi/hmopetus/ohsiha/2014/pruju/09/esitys.php#(9)">luentokalvot</a>,  -->
 [$_SERVER](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2007/demo/jakelukonteksti/http-request-details.php),
 [HTTP_REFERER](http://stackoverflow.com/questions/12369615/serverhttp-referer-missing),
-[sijainti](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2013/demo/sijainti/esimerkki.html),
-[HTML5 ja uudet mahdollisuudet](http://blog.teamtreehouse.com/exploring-javascript-device-apis)
-.
+[yksinkertainen sijainti](),
+[sijainti ja kartta](http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2013/demo/sijainti/esimerkki.html),
+[HTML5 ja uudet mahdollisuudet](http://blog.teamtreehouse.com/exploring-javascript-device-apis),
+Wordpress .
 
 ## Luentoviikko 4.4 (viikko 13) Datajournalismi-vierailuluento
 
