@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+         <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <title>MATHM-81000 Ohjelmallinen sisällönhallinta :: Luentoviikko 4.6</title>
+          <meta name="copyright" content="Esitys Jukka Huhtamäki. Käytössä HTML Slidy." />
+          <meta name="font-size-adjustment" content="1" />
+          <link rel="stylesheet" type="text/css" media="print" href="../Slidy/print.css" />
+          <link rel="stylesheet" href="../Slidy2/styles/slidy.css" type="text/css"
+      media="screen, projection" />
+
+<!--    <link rel="stylesheet" href="../Slidy2/styles/w3c-blue.css" type="text/css"
+      media="screen, projection" /> -->
+    <link rel="stylesheet" href="../Slidy2/styles/iislab.css" type="text/css"
+      media="screen, projection" />
+    <script src="../Slidy2/scripts/slidy.js" type="text/javascript"></script><style type="text/css">
+  .label {
+    display: block;
+    width: 30ex;
+    float: left;
+  }
+</style>
+
+       <!-- start Mixpanel -->
+<!--    <script type="text/javascript">
+    //<![CDATA[
+    (function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_links track_forms register register_once unregister identify name_tag set_config".split(" ");for(e=0;e<
+   g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+   mixpanel.init("d5293bf02815fd090b6340416496ef8a");</script> -->
+   <!-- end Mixpanel -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!--
+    <script type="text/javascript">
+     $(document).ready(function () {
+     mixpanel.track('Open ' + document.title);
+   });
+    //]]>
+     </script>   -->
+</head>
+
+<body>
+  <div class="background">
+    <div class="header"></div>
+  </div>
+
+<div class="slide cover">
+  <h1><a href="https://ohsiha.github.io/2017/luentopaivakirja">Ohjelmallinen sisällönhallinta, kevät 2017</a></h1>
+  <p>Luentoviikko 4.6. Mukautuvat järjestelmät</p>
+  <p>Jukka Huhtamäki</p>
+  <div style="margin-top: 15ex; text-align: right;">
+  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fi/maps?f=q&amp;source=embed&amp;hl=fi&amp;geocode=&amp;q=Korkeakoulunkatu,+33720+Tampere&amp;sll=61.520193,23.637924&amp;sspn=0.015635,0.038581&amp;ie=UTF8&amp;hq=&amp;hnear=Korkeakoulunkatu,+33720+Tampere&amp;ll=61.449541,23.858825&amp;spn=0.007835,0.01929&amp;z=14&amp;layer=c&amp;cbll=61.449547,23.857318&amp;panoid=OwGaoDYUhV02w8bjEMPcew&amp;cbp=12,295.86,,0,0&amp;output=svembed"></iframe><br /></div>
+  </div>
+</div>
+
+<div class="slide">
+  <h1>Luentoviikko 4.6. Mukautuvuus ja käyttäjän mallintaminen</h1>
+  <p>
+    Verkkopalvelun mukauttamista voi tarkastella useasta eri näkökulmasta:
+  </p>
+               <ul>
+                  <li>
+                     <strong>Laiteriippumattomuus:</strong> mahdollisuus verkkopalvelun
+                     käyttämiseen työasemalla, kämmentietokoneella, matkapuhelimella,
+                     puhekäyttöliittymällä, digi-tv:llä tai ruudunlukijalla
+
+                  </li>
+                  <li>
+                     <strong>Saavutettavuus:</strong> laiteriippumattomuus, erityisryhmät,
+                     käyttötilanteet
+
+                  </li>
+                  <li>
+                     <strong>Kansainvälistäminen ja kotoistaminen:</strong> kielestä,
+                     kulttuurista ja maantieteellisestä sijainnista riippumattomat
+                     verkkopalvelut
+                  </li>
+                  <li>
+                     <strong>Personointi:</strong> verkkopalvelun sisällön, toimintojen ja
+                     ulkoasun mukauttaminen käyttäjän mieltymysten mukaiseksi
+                  </li>
+                  <li>
+                      <strong>Suosittelijajärjestelmät:</strong> tietosisältöjen valinnan tukeminen käyttäjän
+                      toiminnan ja profiilitietojen perusteella (kiinnostuksen kohteet).
+                  </li>
+             </ul>
+        </div>
+        <div class="slide">
+            <h1>Taustaa: mukautuva hypermedia</h1>
+         <p>
+               Taustalla <dfn>mukautuvan hypermedian</dfn> (adaptive
+                  hypermedia) periaatteet:
+            </p>
+               <ul>
+                  <li>
+                     Käyttäjästä
+                     luodaan <dfn>malli</dfn> (user model)
+                  </li>
+                  <li>
+                     Sovelluksesta ja sen sisällöstä luodaan malli (domain model)
+
+                  </li>
+                  <li>
+                     Sovelluksesta
+                     käyttäjälle välitettävät näkymät mukautetaan käyttäjän ja
+                     sovelluksen mallin yhdistelmän, ns. <dfn>overlay-mallin</dfn> perusteella
+                  </li>
+               </ul>
+      </div>
+      <div class="slide">
+         <h1>Apuvälineitä mukautuvan verkkopalvelun toteuttamiseen
+         </h1>
+         <p>Semanttinen
+               Web:
+            </p>
+               <ul>
+                  <li>
+                     Tietosisällön rakenteistaminen (XML) ja semanttinen kuvailu (RDF &amp; OWL)
+                  </li>
+                  <li>
+                     Mahdollistaa
+                     tiedon järjestelmällisen/ohjelmallisen käsittelemisen
+                  </li>
+               </ul>
+         <p>
+           <dfn>Käyttökontekstin</dfn> (delivery context)
+           kuvaileminen, ks. <a href="http://matriisi.ee.tut.fi/hmopetus/hm-ohj/2013/pruju/05/esitys.php#(19)">julkaisujärjestelmiä
+           käsittelevä luentomateriaali</a>.
+        </p>
+        <p>
+           <em>Hajautettuihin käyttäjäprofiileihin</em> palaamme vielä tällä luennolla.</p>
+    </div>
+    <div class="slide">
+        <h1>Mukautuvan järjestelmän toteuttaminen</h1>
+        <p>
+               Räätälöity tai joustava julkaiseminen Semanttisen Webin keinoin:
+        </p>
+        <ul>
+          <li>
+            Semanttisen kuvauksen perusteella tietosisällöstä valitaan oikeat tietoalkiot,
+            jotka esitetään jakelukontekstiin soveltuvassa muodossa
+          </li>
+
+        </ul>
+        <p>
+            Mukautuvan järjestelmän toteuttaminen onnistuu mainiosti
+            esimerkiksi relaatiotietokannan, PHP-kielen ja HTTP-protokollan
+            avulla. Toteutustyötä avustavista järjestelmistä tai kirjastoista
+            ei tässäkään yhteydessä ole haittaa.
+        </p>
+      </div>
+      <div class="slide">
+         <h1>Mukautuva hypermedia <cite>Brusilovskyn</cite> mukaan
+         </h1>
+         <p>
+
+               Mukautuvan
+               hypermedian keskeinen tutkija Peter Brusilovsky on määritellyt
+               mukautuvan hypermedian seuraavasti (<cite><a href="http://www2.sis.pitt.edu/~peterb/papers/UMUAI96.pdf">Methods and techniques of
+               adaptive hypermedia</a></cite> <acronym class="format">PDF</acronym>-muodossa):
+        </p>
+               <ul>
+                  <li>
+                     Mukauttaminen perustuu <dfn>käyttäjämalliin</dfn>
+                  </li>
+                  <li>
+                     Sovelluksen
+                     esitystapa ja linkitys voidaan mukauttaa käyttäjämallin
+                     perusteella
+
+                  </li>
+
+                  <li>
+                     <span>Käyttäjämalli</span>: käyttäjän tietämys, osaaminen,
+                     tavoitteet, tausta, kokemukset ja mieltymykset
+
+                  </li>
+                  <li>
+                     <span>Esitystapa:</span> ulkoasu ja sisältö
+
+                  </li>
+                  <li>
+                     <span>Linkitys</span>: linkkien järjestäminen, piilottaminen,
+                     poistaminen, kommentointi (annotointi) ja tuottaminen, käyttäjän
+                     suora ohjaaminen, sisällysluettelon mukauttaminen
+
+                  </li>
+
+               </ul>
+         <p>
+               Käyttäjämalliin
+               voidaan lisätä vielä esimerkiksi kielitaito, äidinkieli ja
+               kansallisuus
+        </p>
+        <p>
+               Brusilovskyn
+               mukautuva hypermedia keskittyy suurelta osin sovelluksen
+               navigaation muokkaamiseen, mutta myös sisällön mukauttamisessa on
+               lukuisia mahdollisuuksia
+        </p>
+      </div>
+      <div class="slide">
+         <h1>Käyttäjän
+            mallintaminen (Brusilovsky)
+         </h1>
+         <p>
+               Käyttäjän
+               mallintaminen mukautuvassa hypermediasovellyksessa Brusilovskyn
+               mukaan:
+
+            </p>
+         <p><img src="media/kayttajan-mallintaminen.png" alt="Periaatekuva käyttäjän mallintamisesta"/></p>
+         <p><span>Lähde:</span> <span>Brusilovsky, P. Methods and techniques of adaptive
+               hypermedia</span></p>
+      </div>
+      <div class="slide">
+         <h1>Esimerkki:
+            amazon.com ja käyttäjän tiedot
+         </h1>
+
+         <p>
+               Amazon.comia
+               käytetään usein esimerkkinä mukautuvasta hypermediasovelluksesta.
+               Amazonin tavoitteena on kasvattaa myyntiä, mutta ideoita voi
+               hyödyntää monessa muussakin yhteydessä.
+         </p>
+        <ul>
+            <li>
+               amazon.com
+               kerää tietoja käyttäjästä esimerkiksi siten, että käyttäjä
+               määrittelee ja arvostelee oman virtuaalisen kirja- ja levyhyllynsä.
+               Tämä on huomattavasti <span>ilmaisuvoimaisempi
+                  vaihtoehto</span> kuin jokaisen mielenkiinnon kohteen
+               määritteleminen erikseen
+
+            </li>
+            <li>
+               Assosiatiivisia
+               linkkejä myytävien artikkeleiden välille muodostetaan useilla eri
+               perusteilla: esittäjä, yhtyeen jäsen, muiden käyttäjien kirja- ja
+               levylistat &amp; ostopäätökset, kirjalliset arviot (~linkkien
+               annotointi), suositukset, ..., erikseen syötetyt
+               metatiedot
+
+            </li>
+            <li>
+               <span>Keskeistä: ”Jukka, this is recommended for
+                  you.</span><span>” “</span>Why?” Siis: palvelu järjestää
+               ja tuottaa uusia linkkejä, hyvä. Tämän lisäksi käyttäjällä on
+               mahdollisuus kysyä järjestelmältä perusteluja sille, miksi tämä
+               ehdottaa jotakin tiettyä artikkelia.
+
+            </li>
+            <li>
+               Käyttäjällä
+               on myös mahdollisuus määritellä käytetäänkö tiettyä tuotetta
+               suositusten tekemiseen (”Use to make recommendations”) tai hylätä
+               järjestelmän tekemä ehdotus (”Not interested”)
+
+            </li>
+         </ul>
+      </div>
+      <div class="slide">
+          <h1>Mukautuvuus ja suosittelujärjestelmät</h1>
+          <p>Amazon.com on paitsi mukautuva järjestelmä, myös <dfn><a href="http://fi.wikipedia.org/wiki/Suositteluj%C3%A4rjestelm%C3%A4t">suosittelujärjestelmä</a></dfn>.</p>
+          <p>Perinteinen lähestymistapa suosittelujärjestelmiin perustuu älykkäisiin algoritmeihin ja yksityiskohtaiseen, asiantuntijoiden muovaamaan dataan.</p>
+          <p>Sosiaalisen median myötä erilaiset sosiaalisen suodattamisen ja suosittelun ratkaisut kasvattavat suosiotaan.</p>
+          <p>Lue johdannoksi vaikkapa Steve Krausen (2006) blogiartikkeli <a href="http://www.stevekrause.org/steve_krause_blog/2006/01/pandora_and_las.html">Pandora and Last.fm: Nature vs. Nurture in Music Recommenders</a></p>
+          <p>Juha Haavisto (2012) käsittelee <a href="http://dspace.cc.tut.fi/dpub/bitstream/handle/123456789/20961/haavisto.pdf?sequence=3">diplomityössään</a> suosittelijajärjestelmän toteuttamista PHP-kielellä.</p>
+          <p>Suosittelujärjestelmiin palataan mahdollisesti kevään mittaan.</p>
+
+      </div>
+      <div class="slide">
+
+         <h1>Kansainvälistäminen ja
+            kotoistaminen
+         </h1>
+         <p>
+               Sovelluksen mukauttamisessa käyttäjälle sopivaksi voidaan ottaa oppia myös
+               <span>kansainvälistämisestä</span>
+               (internationalisation, i18n) ja <span>kotoistamisesta</span> (localisation, l10n)
+        </p>
+        <p>
+
+               <span>Kansainvälistäminen</span>:
+            </p>
+               <ul>
+                  <li>
+                     Sovelluksen
+                     toteuttaminen siten, että siitä voidaan julkaista versiota kielen,
+                     maantieteellisen alueen tai kulttuurin perusteella mukautettuna.
+                  </li>
+                  <li>
+                     Käytännössä:
+                     tekstien, värien, kuvien ja ikonien (sivupohja!) irrottaminen
+                     sovelluksesta kirjastoksi, jonka vaihtaminen onnistuu
+                     helposti
+                  </li>
+                  <li>
+
+                     Myös
+                     päivämäärien, pituus- ja painomittojen ja valuuttojen esittämisessä
+                     on kieli- ja kulttuurikohtaisia eroja
+                  </li>
+             </ul>
+         <p>
+               <span>Kotoistaminen</span>: i18n-mallin
+                     mukaan toteutetun sovelluksen mukauttaminen tietylle kielelle,
+                     kulttuurille tai maantieteelliselle alueelle sopivaksi
+        </p>
+
+         <p>
+               Verkkopalvelussa
+               sovelluksen kansainvälinen jakelu on sisäänrakennettu ominaisuus.
+               Webin käyttäjät eivät kuitenkaan juurikaan ole tottuneet
+               mukautuviin palveluihin. Vai?
+            </p>
+      </div>
+
+      <div class="slide">
+            <h1>Hajautetut käyttäjäprofiilit</h1>
+            <p>
+                Käyttäjäprofiilien hajauttaminen etenee juuri nyt vauhdilla (kiitos
+               <a href="http://www.gemilo.com/yritysblogi/facebook-uudistui-yhteisollisemmaksi/">Facebook-linkkivinkeistä</a>
+               Arto Liukkoselle):
+            </p>
+            <ul>
+                <li><a href="http://opensocial.org/">OpenSocial</a> (code.google.com)</li>
+                <li><a href="http://oauth.net/">OAuth</a> (oauth.net)</li>
+                <li><a href="http://openid.net/">OpenID</a> (openid.fi)</li>
+                <li><a href="https://developers.facebook.com/docs/guides/web/#login">Facebook Authentication</a>
+                  (developers.facebook.com)</li>
+                <li><a href="http://developers.facebook.com/docs/api">Graph API</a> (developers.facebook.com)</li>
+                <li><a href="http://developers.facebook.com/docs/opengraph">Open Graph protocol</a> (developers.facebook.com)</li>
+                <li><a href="http://www.apml.org/endusers/services/">Attention Profiling Mark-up Language</a> (apml.org)</li>
+                <li><a href="http://www.foaf-project.org/">Friend of a Friend (FOAF)</a> (www.foaf-project.org)</li>
+            </ul>
+      </div>
+      <div class="slide">
+          <h1>Esimerkki: Facebook-rajapinta</h1>
+          <p>Tuore Facebook <a href="http://developers.facebook.com/docs/api">Graph API</a>
+              esittelee mahdollisuuden käyttäjien profiilitietojen lukemiseen, vrt.
+              <a href="http://graph.facebook.com/zuck">http://graph.facebook.com/zuck</a>:</p>
+<pre>{"id": "68310606562",
+  "name": "Mark Zuckerberg",
+  "picture": "http://profile.ak.fbcdn.net/object3/1116/30/s68310606562_3401.jpg",
+  "link": "http://www.facebook.com/markzuckerberg",
+  "category": "Public_figures_other",
+  "username": "markzuckerberg",
+  "personal_interests": "openness, making things that help people connect and share what's important to them, revolutions, information flow, minimalism\n\n\n",
+  "fan_count": 504307}</pre>
+      </div>
+      <div class="slide">
+            <h1>Attention Profiling Mark-up Language</h1>
+            <p><img src="media/apml.png" width="800" alt="APML-kielen periaatekuva"/></p>
+            <p>Käytännössä XML-sanasto kiinnostuksen kohteiden ja inhokkien esittämiseen ja siirtämiseen järjestelmien välillä, ks.
+                <a href="http://en.wikipedia.org/wiki/Attention_Profiling_Mark-up_Language#Example">esimerkkitiedosto</a>.</p>
+            <p>Näyttäisi siltä, että APML-kielen kehitys ei vuonna 2013 ole erityisen aktiivista. Lienee niin, että
+              Facebookin rooli käyttäjän sosiaalisen verkoston dataa hyödyntävien sovellusten alustana on juuri nyt kiistämätön.</p>
+      </div>
+      <div class="slide">
+          <h1>Kohti kontekstiherkkiä palveluita</h1>
+          <p class="subhead">Palvelun mukauttamista tiettyyn käyttökertaan voidaan tarkastella useilla tasoilla
+            (vrt. <a href="http://hlab.ee.tut.fi/hmopetus/sosiaalinen-media/blogit/anne-maritta-tervakari/ubiikki-mobiili-ja-kontekstuaalinen-oppiminen-%E2%80%93-hyot">Silius ja Tervakari, 2010</a>):</p>
+          <ul>
+              <li>Fyysinen taso: esim. paikkatieto, paikkatietoon liittyvä tägi (käyttäjän itse määrittelemä),
+                  aikaleima, mahdollinen valokuva, teknistä tietoa käytettävästä laitteistosta</li>
+              <li>Sosiaalinen taso: sosiaalista tilannetta kuvaavaa informaatiota (käyttäjä kuvaus onko yksin, ystävien kanssa, onko muita ihmisiä läsnä jne.)</li>
+              <li>Toiminnan taso: käyttäjän toimintaa kuvaavaa informaatiota (käyttäjän kuvaus mitä on tekemässä, mitä verkkopalvelua käyttää jne.)</li>
+
+              <li>Affektiivinen taso: käyttäjän tunnetilaa kuvaavaa informaatiota</li>
+          </ul>
+          <p>Kontekstitiedon keräämisen tueksi IISLabissa on kehitetty
+              <a href="http://hlab.ee.tut.fi/ucl/">Urban Computing Lab -palvelu</a>.</p>
+      </div>
+      <div class="slide">
+         <h1>Lopuksi</h1>
+         <ul>
+            <li>
+               Verkkopalvelun
+               mukauttamiseen liittyvät asiat avaavat uusia mahdollisuuksia
+               Web-soveltajalle. Mukauttamisen periaate antaa oikein toteutettuna
+               aidon mahdollisuuden verkkopalveluiden saavutettavuus- ja
+               käytettävyysongelmien ratkaisemiseen
+            </li>
+            <li>
+               Taustalla
+               olevista tekoälytieteen periaatteista huolimatta mukautuvan
+               hypermedian ideoiden hyödyntäminen verkkopalveluiden suunnittelussa
+               ja toteutuksessa on suoraviivaista
+            </li>
+            <li>
+               Semanttinen
+               Web ja Web 2.0 –sateenvarjo esittelevät hyödyllisiä mahdollisuuksia
+               mukautuvan hypermedian ideoiden toteuttamiseen suuressa
+               mittakaavassa.
+
+            </li>
+            <li>
+
+               Yhdistelemällä
+               Semanttisen Webin teknologioita ja Web 2.0 –ajattelun periaatteita
+               soveltalla on mahdollisuus toteuttaa hajautettuja ja yhteisöllisiä
+               mukautuvia verkkopalveluita
+
+            </li>
+            <li>
+               Mukautuvien
+               verkkopalveluiden toteuttaminen onnistuu myös perinteisin
+               tekniikoin, esimerkiksi PHP-kielen ja relaatiotietokannan
+               avulla
+
+            </li>
+            <li>
+               Viittaaminen
+               tekoälyyn johtaa kuulijat usein harhaan; tekoälyssäkin on lopulta
+               kysymys vain ja ainoastaan siitä, että tietokone toteuttaa
+               rutiineja ihmisen puolesta. Toiminnallisuudet voivat toki olla
+               keskimääräisiä sovelluksia monipuolisempia
+
+            </li>
+         </ul>
+      </div>
+  </body>
+</html>

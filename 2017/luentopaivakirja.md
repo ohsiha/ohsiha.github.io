@@ -15,6 +15,13 @@ Alan dynaamisuudesta johtuen sisältöjä ja toteutustapaa kuitenkin kehitetää
 
 ## Luentoviikko 4.6 (viikko 15): Mukautuvat järjestelmät
 
+ Kohti mukautuvia ominaisuuksia. Lähestymistapoja mukautuvuuteen (laiteriippumattomuus, saavutettavuus, kansainvälistäminen &amp; kotoistaminen, personointi, suosittelijajärjestelmät), mukautuva hypermedia, mitä mukautetaan?, käyttäjän mallintaminen, hajautetut käyttäjäprofiilit. Suosittelijajärjestelmät.
+
+Lisätietoa:
+
+* [Overview of Recommender Systems](http://bit.ly/2ohLA02) (Stanford University)
+
+
 ## Luentoviikko 4.5 (viikko 14): Käytön seuranta
 
 [Esitys](luento/45/esitys.html) hypertekstinä.
