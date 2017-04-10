@@ -23,13 +23,13 @@ mukautuva hypermedia,
 mitä mukautetaan?,
 käyttäjän mallintaminen,
 hajautetut käyttäjäprofiilit.
-Suosittelijajärjestelmät.
+Suosittelujärjestelmät.
 
 Lisätietoa:
 
 * [Overview of Recommender Systems](http://bit.ly/2ohLA02) (Stanford University)
 * Recommender systems, Part 1: [Introduction to approaches and algorithms](https://www.ibm.com/developerworks/library/os-recommender1/) (M. Jones, IBM)
-* [Surprise: A Python scikit for recommender systems](http://surpriselib.com/) 
+* [Surprise: A Python scikit for recommender systems](http://surpriselib.com/)
 
 
 ## Luentoviikko 4.5 (viikko 14): Käytön seuranta
