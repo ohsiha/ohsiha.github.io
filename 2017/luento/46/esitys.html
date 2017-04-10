@@ -239,21 +239,20 @@
                annotointi), suositukset, ..., erikseen syötetyt
                metatiedot
             </li>
-            <li>
-               Keskeistä: <samp>&quot;Jukka, this is recommended for you.</samp>&quot;
-               <samp>Why?</samp> Siis: palvelu järjestää ja tuottaa uusia linkkejä, hyvä.
-               Tämän lisäksi käyttäjällä on
-               mahdollisuus kysyä järjestelmältä perusteluja sille, miksi tämä
-               ehdottaa jotakin tiettyä artikkelia.
+      <li>
+         Keskeistä: &quot;Jukka, this is recommended for you.&quot;
+         &quot;Why?&quot; Siis: palvelu järjestää ja tuottaa uusia linkkejä, hyvä.
+         Tämän lisäksi käyttäjällä on mahdollisuus kysyä järjestelmältä perusteluja sille, miksi tämä
+         ehdottaa jotakin tiettyä artikkelia.
 
-            </li>
-            <li>
-               Käyttäjällä
-               on myös mahdollisuus määritellä käytetäänkö tiettyä tuotetta
-               suositusten tekemiseen (<samp>Use to make recommendations</samp>) tai hylätä
-               järjestelmän tekemä ehdotus (<samp>Not interested</samp>)
+      </li>
+      <li>
+         Käyttäjällä
+         on myös mahdollisuus määritellä käytetäänkö tiettyä tuotetta
+         suositusten tekemiseen (&quot;Use to make recommendations&quot;) tai hylätä
+         järjestelmän tekemä ehdotus (&quot;Not interested&quot;)
 
-            </li>
+      </li>
          </ul>
       </div>
       <div class="slide">
@@ -263,76 +262,62 @@
         <p>Sosiaalisen median myötä erilaiset sosiaalisen suodattamisen ja suosittelun ratkaisut kasvattavat suosiotaan.</p>
         <p>Lue johdannoksi vaikkapa Steve Krausen (2006) blogiartikkeli <a href="http://www.stevekrause.org/steve_krause_blog/2006/01/pandora_and_las.html">Pandora and Last.fm: Nature vs. Nurture in Music Recommenders</a></p>
         <p>Juha Haavisto (2012) käsittelee <a href="http://dspace.cc.tut.fi/dpub/bitstream/handle/123456789/20961/haavisto.pdf?sequence=3">diplomityössään</a> suosittelijajärjestelmän toteuttamista PHP-kielellä.</p>
-        <p>Suosittelujärjestelmiin palataan mahdollisesti kevään mittaan.</p>
+        <!-- <p>Suosittelujärjestelmiin palataan mahdollisesti kevään mittaan.</p> -->
       </div>
-      <div class="slide">
-         <h1>Kansainvälistäminen ja
-            kotoistaminen
-         </h1>
-         <p>
-             Sovelluksen mukauttamisessa käyttäjälle sopivaksi voidaan ottaa oppia myös
-             <em>kansainvälistämisestä</em>
-             (internationalisation, i18n) ja <span>kotoistamisesta</span> (localisation, l10n)
-        </p>
-        <p>
-
-               <span>Kansainvälistäminen</span>:
-            </p>
-               <ul>
-                  <li>
-                     Sovelluksen
-                     toteuttaminen siten, että siitä voidaan julkaista versiota kielen,
-                     maantieteellisen alueen tai kulttuurin perusteella mukautettuna.
-                  </li>
-                  <li>
-                     Käytännössä:
-                     tekstien, värien, kuvien ja ikonien (sivupohja!) irrottaminen
-                     sovelluksesta kirjastoksi, jonka vaihtaminen onnistuu
-                     helposti
-                  </li>
-                  <li>
-
-                     Myös
-                     päivämäärien, pituus- ja painomittojen ja valuuttojen esittämisessä
-                     on kieli- ja kulttuurikohtaisia eroja
-                  </li>
-             </ul>
-         <p>
-               <span>Kotoistaminen</span>: i18n-mallin
-                     mukaan toteutetun sovelluksen mukauttaminen tietylle kielelle,
-                     kulttuurille tai maantieteelliselle alueelle sopivaksi
-        </p>
-
-         <p>
-               Verkkopalvelussa
-               sovelluksen kansainvälinen jakelu on sisäänrakennettu ominaisuus.
-               Webin käyttäjät eivät kuitenkaan juurikaan ole tottuneet
-               mukautuviin palveluihin. Vai?
-            </p>
-      </div>
-
-      <div class="slide">
-            <h1>Hajautetut käyttäjäprofiilit</h1>
-            <p>
-                Käyttäjäprofiilien hajauttaminen etenee juuri nyt vauhdilla (kiitos
-               <a href="http://www.gemilo.com/yritysblogi/facebook-uudistui-yhteisollisemmaksi/">Facebook-linkkivinkeistä</a>
-               Arto Liukkoselle):
-            </p>
-            <ul>
-                <li><a href="http://opensocial.org/">OpenSocial</a> (code.google.com)</li>
-                <li><a href="http://oauth.net/">OAuth</a> (oauth.net)</li>
-                <li><a href="http://openid.net/">OpenID</a> (openid.fi)</li>
-                <li><a href="https://developers.facebook.com/docs/guides/web/#login">Facebook Authentication</a>
-                  (developers.facebook.com)</li>
-                <li><a href="http://developers.facebook.com/docs/api">Graph API</a> (developers.facebook.com)</li>
-                <li><a href="http://developers.facebook.com/docs/opengraph">Open Graph protocol</a> (developers.facebook.com)</li>
-                <li><a href="http://www.apml.org/endusers/services/">Attention Profiling Mark-up Language</a> (apml.org)</li>
-                <li><a href="http://www.foaf-project.org/">Friend of a Friend (FOAF)</a> (www.foaf-project.org)</li>
-            </ul>
+  <div class="slide">
+     <h1>Kansainvälistäminen ja
+        kotoistaminen
+     </h1>
+     <p>
+         Sovelluksen mukauttamisessa käyttäjälle sopivaksi voidaan ottaa oppia myös
+         <em>kansainvälistämisestä</em>
+         (internationalization, i18n) ja <span>kotoistamisesta</span> (localization, l10n)
+    </p>
+    <p><strong>Kansainvälistäminen</strong>:</p>
+    <ul>
+      <li>
+         Sovelluksen toteuttaminen siten, että siitä voidaan julkaista versiota kielen,
+         maantieteellisen alueen tai kulttuurin perusteella mukautettuna.
+      </li>
+      <li>
+         Käytännössä:
+         tekstien, värien, kuvien ja ikonien (sivupohja!) irrottaminen
+         sovelluksesta kirjastoksi, jonka vaihtaminen onnistuu
+         helposti
+      </li>
+      <li>
+         Myös päivämäärien, pituus- ja painomittojen ja valuuttojen esittämisessä
+         on kieli- ja kulttuurikohtaisia eroja
+      </li>
+   </ul>
+   <p>
+      <strong>Kotoistaminen</strong>: i18n-mallin
+      mukaan toteutetun sovelluksen mukauttaminen tietylle kielelle,
+      kulttuurille tai maantieteelliselle alueelle sopivaksi
+   </p>
+   <p>
+     Verkkopalvelussa sovelluksen kansainvälinen jakelu on sisäänrakennettu ominaisuus.
+     Webin käyttäjät eivät kuitenkaan juurikaan ole tottuneet
+     mukautuviin palveluihin. Vai?
+    </p>
+  </div>
+  <div class="slide">
+    <h1>Hajautetut käyttäjäprofiilit</h1>
+    <p>
+        Sosiaalisessa mediassa riittää käyttäjäprofiilidataa
+    </p>
+    <ul>
+        <li><a href="http://opensocial.org/">OpenSocial</a> (code.google.com)</li>
+        <li><a href="http://oauth.net/">OAuth</a> (oauth.net)</li>
+        <li><a href="https://developers.facebook.com/docs/guides/web/#login">Facebook Authentication</a>
+          (developers.facebook.com)</li>
+        <li><a href="http://developers.facebook.com/docs/api">Graph API</a> (developers.facebook.com)</li>
+        <li><a href="http://www.foaf-project.org/">Friend of a Friend (FOAF)</a> (www.foaf-project.org)</li>
+    </ul>
       </div>
       <div class="slide">
           <h1>Esimerkki: Facebook-rajapinta</h1>
-          <p>Tuore Facebook <a href="http://developers.facebook.com/docs/api">Graph API</a>
+          <p>Facebook <a href="http://developers.facebook.com/docs/api">Graph API</a>
               esittelee mahdollisuuden käyttäjien profiilitietojen lukemiseen, vrt.
               <a href="http://graph.facebook.com/zuck">http://graph.facebook.com/zuck</a>:</p>
 <pre>{"id": "68310606562",
@@ -344,29 +329,30 @@
   "personal_interests": "openness, making things that help people connect and share what's important to them, revolutions, information flow, minimalism\n\n\n",
   "fan_count": 504307}</pre>
       </div>
-      <div class="slide">
+      <!-- <div class="slide">
             <h1>Attention Profiling Mark-up Language</h1>
             <p><img src="media/apml.png" width="800" alt="APML-kielen periaatekuva"/></p>
             <p>Käytännössä XML-sanasto kiinnostuksen kohteiden ja inhokkien esittämiseen ja siirtämiseen järjestelmien välillä, ks.
                 <a href="http://en.wikipedia.org/wiki/Attention_Profiling_Mark-up_Language#Example">esimerkkitiedosto</a>.</p>
             <p>Näyttäisi siltä, että APML-kielen kehitys ei vuonna 2013 ole erityisen aktiivista. Lienee niin, että
               Facebookin rooli käyttäjän sosiaalisen verkoston dataa hyödyntävien sovellusten alustana on juuri nyt kiistämätön.</p>
-      </div>
-      <div class="slide">
-          <h1>Kohti kontekstiherkkiä palveluita</h1>
-          <p class="subhead">Palvelun mukauttamista tiettyyn käyttökertaan voidaan tarkastella useilla tasoilla
-            (vrt. <a href="http://hlab.ee.tut.fi/hmopetus/sosiaalinen-media/blogit/anne-maritta-tervakari/ubiikki-mobiili-ja-kontekstuaalinen-oppiminen-%E2%80%93-hyot">Silius ja Tervakari, 2010</a>):</p>
-          <ul>
-              <li>Fyysinen taso: esim. paikkatieto, paikkatietoon liittyvä tägi (käyttäjän itse määrittelemä),
-                  aikaleima, mahdollinen valokuva, teknistä tietoa käytettävästä laitteistosta</li>
-              <li>Sosiaalinen taso: sosiaalista tilannetta kuvaavaa informaatiota (käyttäjä kuvaus onko yksin, ystävien kanssa, onko muita ihmisiä läsnä jne.)</li>
-              <li>Toiminnan taso: käyttäjän toimintaa kuvaavaa informaatiota (käyttäjän kuvaus mitä on tekemässä, mitä verkkopalvelua käyttää jne.)</li>
+      </div> -->
+  <div class="slide">
+      <h1>Kohti kontekstiherkkiä palveluita</h1>
+      <p class="subhead">Palvelun mukauttamista tiettyyn käyttökontekstiin voidaan tarkastella useilla tasoilla
+        (vrt. <a href="https://hlab.ee.tut.fi/hmopetus/sosiaalinen-media/blogit/anne-maritta-tervakari/ubiikki-mobiili-ja-kontekstuaalinen-oppiminen-%E2%80%93-hyot.html">Silius ja Tervakari, 2010</a>):</p>
+      <ul>
+          <li>Fyysinen taso: esim. paikkatieto, paikkatietoon liittyvä tägi (käyttäjän itse määrittelemä),
+              aikaleima, mahdollinen valokuva, teknistä tietoa käytettävästä laitteistosta</li>
+          <li>Sosiaalinen taso: sosiaalista tilannetta kuvaavaa informaatiota (käyttäjä kuvaus onko yksin, ystävien kanssa, onko muita ihmisiä läsnä jne.)</li>
+          <li>Toiminnan taso: käyttäjän toimintaa kuvaavaa informaatiota (käyttäjän kuvaus mitä on tekemässä, mitä verkkopalvelua käyttää jne.)</li>
 
-              <li>Affektiivinen taso: käyttäjän tunnetilaa kuvaavaa informaatiota</li>
-          </ul>
-          <p>Kontekstitiedon keräämisen tueksi IISLabissa on kehitetty
-              <a href="http://hlab.ee.tut.fi/ucl/">Urban Computing Lab -palvelu</a>.</p>
-      </div>
+          <li>Affektiivinen taso: käyttäjän tunnetilaa kuvaavaa informaatiota</li>
+      </ul>
+
+          <!-- <p>Kontekstitiedon keräämisen tueksi IISLabissa on kehitetty
+              <a href="http://hlab.ee.tut.fi/ucl/">Urban Computing Lab -palvelu</a>.</p> -->
+  </div>
       <div class="slide">
          <h1>Lopuksi</h1>
          <ul>
@@ -391,27 +377,23 @@
 
             </li>
             <li>
-
                Yhdistelemällä
-               Semanttisen Webin teknologioita ja Web 2.0 –ajattelun periaatteita
-               soveltalla on mahdollisuus toteuttaa hajautettuja ja yhteisöllisiä
+               Semanttisen Webin ja Web 2.0 –ajattelun periaatteita
+               soveltajalla on mahdollisuus toteuttaa hajautettuja ja yhteisöllisiä
                mukautuvia verkkopalveluita
-
             </li>
             <li>
                Mukautuvien
                verkkopalveluiden toteuttaminen onnistuu myös perinteisin
-               tekniikoin, esimerkiksi PHP-kielen ja relaatiotietokannan
+               tekniikoin, esimerkiksi Python-kielen ja relaatiotietokannan
                avulla
-
             </li>
             <li>
                Viittaaminen
                tekoälyyn johtaa kuulijat usein harhaan; tekoälyssäkin on lopulta
                kysymys vain ja ainoastaan siitä, että tietokone toteuttaa
                rutiineja ihmisen puolesta. Toiminnallisuudet voivat toki olla
-               keskimääräisiä sovelluksia monipuolisempia
-
+               keskimääräisiä sovelluksia monipuolisempia - [koneoppiminen](https://fi.wikipedia.org/wiki/Koneoppiminen).
             </li>
          </ul>
       </div>
