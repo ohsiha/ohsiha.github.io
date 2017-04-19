@@ -23,7 +23,7 @@ mukautuva hypermedia,
 mitä mukautetaan?,
 käyttäjän mallintaminen,
 hajautetut käyttäjäprofiilit.
-Suosittelujärjestelmät.
+Suosittelujärjestelmät. Koodiklinikalla hahmotellaan [askeleita kohti oppivia järjestelmiä](https://ohsiha.github.io/2017/04/19/alykkaat-jarjestelmat).
 
 Lisätietoa:
 
