@@ -3,7 +3,7 @@ layout: default
 title: Kohti oppivia järjestelmiä
 ---
 
-Viimeisellä Koodiklinikalla hahmotellaan askeleita kohti oppivien järjestelmien rakentamista
+Viimeisellä Koodiklinikalla hahmotellaan askeleita kohti oppivien järjestelmien rakentamista.
 
 Sisällön jalostaminen
 
@@ -20,3 +20,10 @@ Koneoppiminen
 * ryhmittely (clustering)
 * samankaltaisuusanalyysi (ks. [Document Similarity using NLTK and Scikit-Learn](http://www.cs.duke.edu/courses/spring14/compsci290/assignments/lab02.html) )
 * Ks. [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning) (huomaathan: kokonaisuuden kehitys keskeytetty) ja [SGN-41007 Pattern Recognition and Machine Learning](http://www.cs.tut.fi/courses/SGN-41007/)
+
+SuosittelujärjestelmätLisätietoa:
+
+* [Overview of Recommender Systems](http://bit.ly/2ohLA02) (Stanford University)
+* Recommender systems, Part 1: [Introduction to approaches and algorithms](https://www.ibm.com/developerworks/library/os-recommender1/) (M. Jones, IBM)
+* [Surprise: A Python scikit for recommender systems](http://surpriselib.com/)
+* [Collaborative Filtering with Python](http://www.salemmarafi.com/code/collaborative-filtering-with-python/) (Marafi, 2015)
