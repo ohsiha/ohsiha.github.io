@@ -21,6 +21,6 @@ Vaiheet:
 Aineistoa:
 
 * https://twitter.com/tuomassalo/status/912563287568601088
-* Machine Learning, NLP: Text Classification using scikit-learn, python and NLTK. [(Shaikh, 2017)] (https://medium.com/towards-data-science/machine-learning-nlp-text-classification-using-scikit-learn-python-and-nltk-c52b92a7c73a)
+* Machine Learning, NLP: Text Classification using scikit-learn, python and NLTK. [(Shaikh, 2017)](https://medium.com/towards-data-science/machine-learning-nlp-text-classification-using-scikit-learn-python-and-nltk-c52b92a7c73a)
 * A journey to Dockerize Voikko & Python App [(Karhunen, 2017)](https://janikarhunen.fi/a-journey-to-dockerize-voikko-and-python-app.html)
 * Tiedoksi Sukija-sovellus: Puheenvuorot.kansanmuisti.fi (ja	hiukan sanoja) [(Salo, 2011)](http://lists.puimula.org/pipermail/voikko/2011-November/001637.html)
