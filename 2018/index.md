@@ -12,7 +12,15 @@ Opintojakson kevään 2018 toteutuskerta rakentuu tämän Github-kokonaisuuden y
 Alan kehitys etenee huimaa tahtia, joten sisältöjä päivitetään vuosittain.
 Myös opintojakson toteutustapaa kehitetään jatkuvasti.
 
-<!-- * [Luentopäiväkirja](luentopaivakirja) kokoaa yhteen toteutuskerran keskeiset tiedot ja resurssit.
+* [Luentopäiväkirja](luentopaivakirja) kokoaa yhteen toteutuskerran keskeiset tiedot ja resurssit
+
+Seuraavat sivut julkaistaan pian:
+
+* Teknologiademot tukevat harjoitustyön käynnistämistä
+* Harjoitustyöohje esittelee harjoitustyön tekemisen käytännöt
+* Suorittaminen kertoo pisteytyksen ja suorittamisen yksityiskohdat
+
+<!--
 * [Teknologiademot](teknologiademo) tukevat harjoitustyön käynnistämistä.
 * [Harjoitustyöohje](harjoitustyo) esittelee harjoitustyön tekemisen käytännöt.
 * [Suorittaminen](suorittaminen) kertoo pisteytyksen ja suorittamisen yksityiskohdat. -->
