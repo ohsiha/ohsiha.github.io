@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Luentopäiväkirja / OHSIHA 2018
+year: 2018
 ---
 
 Tämä on Ohjelmallisen sisällönhallinnan kevään 2018 toteutuskerran luentopäiväkirja.
