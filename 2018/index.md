@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Etusivu / OHSIHA 2017
+year: 2018
 ---
 
 # Ohjelmallinen sisällönhallinta 2018
